@@ -1,5 +1,7 @@
 import { ColumnDefinition, FieldGroupContainer, MuiTextField } from "@palmyralabs/rt-forms-mui";
 import storeFactory from "../Wire/StoreFactory";
+import { SummaryDialogGrid } from "../../../src/palmyra/template/dialog/SummaryDialogGrid";
+import { IEndPoint } from "@palmyralabs/palmyra-wire";
 
 
 function DialogGrid(props: any) {
@@ -8,7 +10,7 @@ function DialogGrid(props: any) {
         {
             attribute: "name",
             name: "District",
-            title: "District",
+            label: "District",
             searchable: true,
             sortable: true,
             type: "string"
@@ -16,7 +18,7 @@ function DialogGrid(props: any) {
         {
             attribute: "population",
             name: "Population",
-            title: "Population",
+            label: "Population",
             searchable: true,
             sortable: true,
             type: "number"
@@ -33,6 +35,10 @@ function DialogGrid(props: any) {
         </>)
     }
 
+    const endPoint: IEndPoint = { get: 'district/{id}.json', 
+        query: 'district/SummaryData.json', put: 'district/{id}.json',
+        post:'district/new.json'
+    }
 
     return (
         <SummaryDialogGrid
@@ -41,7 +47,7 @@ function DialogGrid(props: any) {
             fields={fields}
             pageName={props.pageName}
             title={"Summary Dialog Grid"}
-            options={{ endPoint: '/masterdata/district' }} />
+            options={{ endPoint }} />
     );
 }
 

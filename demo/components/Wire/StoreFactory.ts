@@ -1,5 +1,5 @@
 import { PalmyraStoreFactory } from "@palmyralabs/palmyra-wire";
 
-const storeFactory = new PalmyraStoreFactory({ baseUrl: "/api/palmyra" });
+const storeFactory = new PalmyraStoreFactory({ baseUrl: "/data/" });
 
 export default storeFactory;

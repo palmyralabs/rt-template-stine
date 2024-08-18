@@ -1,6 +1,7 @@
 import { ColumnDefinition, FieldGroupContainer, MuiTextField } from "@palmyralabs/rt-forms-mui";
 import storeFactory from "../Wire/StoreFactory";
 import { SummaryDrawerGrid } from "../../../src/main";
+import { IEndPoint } from "@palmyralabs/palmyra-wire";
 
 
 function DrawerGrid(props: any) {
@@ -29,10 +30,15 @@ function DrawerGrid(props: any) {
 
         return (<>
             <FieldGroupContainer>
-                <MuiTextField attribute="name" label="District" />
+                <MuiTextField attribute="name" label="District" required/>
                 {/* <MuiNumberField attribute="population" label="Population" /> */}
             </FieldGroupContainer>
         </>)
+    }
+
+    const endPoint: IEndPoint = { get: 'district/{id}.json', 
+        query: 'district/SummaryData.json', put: 'district/{id}.json',
+        post:'district/new.json'
     }
 
     return (
@@ -42,7 +48,7 @@ function DrawerGrid(props: any) {
             fields={fields}
             pageName={props.pageName}
             title={"Summary Drawer Grid"}
-            options={{ endPoint: 'SummaryData.json' }} />
+            options={{ endPoint }} />
     );
 }
 

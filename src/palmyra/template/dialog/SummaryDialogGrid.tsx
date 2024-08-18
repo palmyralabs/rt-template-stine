@@ -1,52 +1,35 @@
 
-import { FC, useEffect, useRef, useState } from "react";
-import { Button, Drawer } from '@mui/material';
-import { NewForm } from "./NewForm";
-import { EditForm } from "./EditForm";
+import { FC, useEffect, useRef } from "react";
+import { Button } from '@mui/material';
 import { ISummaryGridInput } from "../Types";
 import { topic } from "@palmyralabs/ts-utils";
 import {
     PalmyraGrid, DataGridPluginOptions, IDataGridDefaultControlConfig,
     QuickSearch, FilterButton, ExportDataButton
 } from "@palmyralabs/rt-forms-mui";
+import { IDialogForm, SummaryDialogForm } from "./SummaryDialogForm";
 
-interface IFormletInput {
-
-}
-
-interface IDrawerGridInput extends ISummaryGridInput {
+interface IDialogGridInput extends ISummaryGridInput {
     EditFormlet: FC,
-    NewFormlet: FC<IFormletInput>,
+    NewFormlet: FC,
     customizer?: any,
     gridRef?: any,
     errorText?: any,
     customButton?: any,
     title?: any
     width?: any
+    dialogHeight?: string,
+    dialogMinWidth?: string
 }
 
-function SummaryDrawerGrid(props: IDrawerGridInput) {
-    const storeFactory = props.storeFactory;
+
+function SummaryDialogGrid(props: IDialogGridInput) {
     const viewTopic = props.pageName + "/viewPage";
     const newTopic = props.pageName + "/newPage";
     const refreshTopic = props.pageName + "/refresh";
     const title: any = props.title;
-    const idKey = props.idKey || 'id';
 
-    const formattedTitle = (title === title.toUpperCase())
-        ? capitalizeWords(title.toLowerCase())
-        : title;
-
-    function capitalizeWords(str: string): string {
-        return str.replace(/\b\w/g, match => match.toUpperCase());
-    }
-
-    const [data, setData] = useState<any>(undefined);
-    const drawerWidth = props.width || '600px';
-    const referenceCount = useRef<number>(0);
-
-    const EditFormlet = props.EditFormlet;
-    const NewFormlet = props.NewFormlet;
+    const dialogFormRef: any = useRef<IDialogForm>();
     const gridRef: any = props.gridRef || useRef(null);
 
     useEffect(() => {
@@ -68,28 +51,15 @@ function SummaryDrawerGrid(props: IDrawerGridInput) {
             topic.unsubscribe(refreshHandle);
         }
 
-    }, [data]);
-
-    const onCancel = () => {
-        setData(undefined)
-    }
-
-    const onComplete = () => {
-        setData(undefined)
-        onSave();
-    }
-
-    const onSave = () => {
-        referenceCount.current += 1;
-        gridRef.current.refresh();
-    }
+    }, []);
 
     const handleRowClick = (rowData) => {
         setData(rowData);
     }
 
-    const handleError = (e) => {
-        console.log(e);
+    const setData = (d: any) => {
+        if (dialogFormRef.current)
+            dialogFormRef.current.setData(d);
     }
 
     const DataGridControls = (props: DataGridPluginOptions) => {
@@ -107,7 +77,6 @@ function SummaryDrawerGrid(props: IDrawerGridInput) {
         </>);
     }
 
-
     return (<>
         <div className='grid-renderer-container'>
             {/* <div className="grid-renderer-header">{props?.title}</div> */}
@@ -117,24 +86,9 @@ function SummaryDrawerGrid(props: IDrawerGridInput) {
                     ref={gridRef} customizer={props.customizer} />
             </div>
         </div>
-        <Drawer anchor="right" PaperProps={{ sx: { width: drawerWidth } }}
-            open={data != undefined} onClose={onCancel}>
-            {data &&
-                (data?.[idKey] ?
-                    <EditForm id={data.id}
-                        onCancel={onCancel} onComplete={onComplete} onSave={onSave} onFailure={handleError}
-                        options={props.options} pageName={props.pageName} FORMLET={EditFormlet} storeFactory={storeFactory}
-                        title={"Edit " + formattedTitle} key={(referenceCount.current + 5) + ''}>
-                    </EditForm> :
-                    <NewForm onCancel={onCancel} onComplete={onComplete} onSave={onSave} onFailure={handleError}
-                        options={props.options} pageName={props.pageName} FORMLET={NewFormlet} storeFactory={storeFactory}
-                        title={"New " + formattedTitle} errorText={props.errorText} key={(referenceCount.current + 2) + ''} >
-                    </NewForm>)
-            }
-        </Drawer>
+        <SummaryDialogForm  {...props} gridRef={gridRef} ref={dialogFormRef}/>
     </>
     );
 }
 
-export type { IFormletInput }
-export { SummaryDrawerGrid };
+export { SummaryDialogGrid };

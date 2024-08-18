@@ -4,8 +4,6 @@ import GridPage from './Pages/GridPage';
 import { MainLayout } from './layout/main/MainLayout';
 import NewFormPage from './Pages/NewFormPage';
 import ViewFormPage from './Pages/ViewFormPage';
-import EditFormPage from './Pages/EditFormPage';
-import EditGridPage from './Pages/EditGridPage';
 import DrawerGridPage from './Pages/DrawerGridPage';
 import DialogGridPage from './Pages/DialogGridPage';
 
@@ -20,8 +18,6 @@ function App() {
             <Route path="/grid" element={<GridPage />} />
             <Route path="/grid/new" element={<NewFormPage />} />
             <Route path="/grid/view/:id" element={<ViewFormPage />} />
-            <Route path="/editGrid" element={<EditGridPage />} />
-            <Route path="/editGrid/edit/:id" element={<EditFormPage />} />
             <Route path="/drawerGrid" element={<DrawerGridPage />} />
             <Route path="/dialogGrid" element={<DialogGridPage />} />
             <Route path="*" element={<h1>Under Construction</h1>} />

@@ -20,7 +20,14 @@ interface queryOptions {
     },
 }
 
-interface IFormEditInput extends IPageInput {
+interface IFormInput {
+    onComplete: (data: any) => void,
+    onSave: (data: any) => void,
+    onFailure: (error: any) => void,
+    onCancel: () => void
+}
+
+interface IFormEditInput extends IPageInput, IFormInput {
     options: IOptions,
     id: string,
     children?: any,
@@ -29,7 +36,7 @@ interface IFormEditInput extends IPageInput {
 }
 
 
-interface IFormNewInput extends IPageInput {
+interface IFormNewInput extends IPageInput, IFormInput {
     options: IOptions,
     children?: any,
     id?: string,
@@ -37,7 +44,7 @@ interface IFormNewInput extends IPageInput {
     initialData?: {}
 }
 
-interface IFormViewInput extends IPageInput {
+interface IFormViewInput extends IPageInput, IFormInput {
     options: IOptions,
     id: string,
     children: any,
@@ -51,6 +58,7 @@ interface ISummaryGridInput extends IPageInput {
     exportOptions?: IExportOptions,
     densityOptions?: any,
     storeFactory: StoreFactory<any>
+    idKey?: string
 }
 
-export type { IPageInput, IFormEditInput, IFormNewInput, IFormViewInput, ISummaryGridInput }
+export type { IPageInput, IFormEditInput, IFormNewInput, IFormViewInput, ISummaryGridInput, IFormInput, IOptions }

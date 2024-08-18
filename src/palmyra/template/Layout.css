@@ -1,0 +1,467 @@
+:root {
+    --primary-fontsize: 1.5em;
+    --secondary-fontsize: 0.9em;
+    --left-menu-fontsize: 1.01em;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.filled-button {
+    border-radius: 5px !important;
+    gap: 5px !important;
+    font-size: 14px !important;
+    text-transform: none !important;
+    cursor: pointer;
+}
+
+.secondary-filled-button {
+    border-radius: 5px !important;
+    gap: 5px !important;
+    font-size: 14px !important;
+    cursor: pointer;
+    text-transform: none !important;
+}
+
+.cancel-filled-button {
+    border-radius: 5px !important;
+    gap: 5px !important;
+    font-size: 14px !important;
+    cursor: pointer;
+    text-transform: none !important;
+}
+
+.cancel-oulined-button {
+    border-radius: 5px !important;
+    gap: 5px !important;
+    font-size: 14px !important;
+    border: 1px solid !important;
+    cursor: pointer;
+    text-transform: none !important;
+}
+
+.default-filled-button {
+    border-radius: 5px !important;
+    gap: 8px !important;
+    font-size: 14px !important;
+    cursor: pointer;
+    text-transform: none !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.outlined-button {
+    border-radius: 5px !important;
+    font-size: 14px !important;
+    gap: 8px !important;
+    border: 1px solid !important;
+    text-transform: none !important;
+    cursor: pointer;
+}
+
+.outlined-button:hover {
+    box-shadow: none !important;
+}
+
+.button-icon {
+    font-size: 16px !important;
+    margin-left: 0px !important;
+    vertical-align: middle !important;
+    cursor: pointer !important;
+}
+
+.disabled-button {
+    border-radius: 5px !important;
+    gap: 5px !important;
+    text-transform: none !important;
+    cursor: not-allowed;
+}
+
+/* --Palmyra Dialog */
+.palmyra-dialog-form-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.palmyra-dialog-content-container {
+    padding: 0px 10px 10px 10px;
+}
+
+.palmyra-dialog-btn-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: end;
+    padding: 20px 20px 10px 0;
+}
+
+.palmyra-dialog-header-text {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.palmyra-dialog-content-container .palmyra-form-field-container {
+    padding: 10px;
+}
+
+.palmyra-dialog-header-text {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+/* -- Grid Dialog-- */
+/* .grid-dialog .MuiDialog-paper {
+    min-width: 800px !important;
+} */
+
+/* .grid-export-btn .density-dropdown-content ul li {
+pointer-events: none;
+    opacity: 0.25;
+} */
+
+.grid-filter-content {
+    padding: 10px 30px 10px 30px;
+}
+
+.grid-dialog-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.grid-dialog-header-left-container {
+    width: 50%;
+}
+
+.grid-dialog-header-right-container {
+    /* width: 50%; */
+    text-align: end;
+    background-color: var(--cancel-btn-bgcolor);
+    color: var(--cancel-btn-color);
+    padding: 5px 5px 0 5px;
+    border-radius: 5px;
+    text-align: end;
+}
+
+.grid-dialog-header-text {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.grid-dialog-content-container {
+    padding: 10px;
+}
+
+.grid-dialog-header-close-icon {
+    cursor: pointer;
+}
+
+/* -- Form -- */
+
+.form-container {
+    padding: 10px;
+}
+
+.form-header-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-top: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.form-header-btn-container {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
+}
+
+.form-header-text {
+    width: 50% !important;
+    text-align: start !important;
+}
+
+.form-button-container {
+    width: 50% !important;
+    text-align: end !important;
+}
+
+/* -- View Form -- */
+
+.user-view-form-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.user-view-form-left-container {
+    width: 50%;
+}
+
+.user-view-form-right-container {
+    width: 50%;
+}
+
+.user-view-form-detail {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.user-view-form-label {
+    width: 100%;
+    color: var(--disable-text-color);
+}
+
+.user-view-form-data {
+    width: 100%;
+}
+
+/* -- Grid -- */
+.grid-header-right-content-text {
+    color: black;
+    font-weight: bold;
+}
+
+.MuiTableContainer-root {
+    max-height: 75vh;
+    overflow: auto;
+}
+
+.MuiTableHead-root {
+    position: sticky;
+    top: 0;
+    background-color: rgba(248, 248, 248);
+}
+
+.MuiTable-root {
+    border-collapse: unset !important;
+}
+
+.table-footer {
+    position: sticky;
+    bottom: 0;
+}
+
+.palmyra-grid-container {
+    width: 100%;
+    /* padding: 20px; */
+    margin-top: 10px;
+}
+
+/* .summary-drawer-grid .table-row,
+.summary-edit-grid .table-row,
+.summary-grid .table-row {
+    cursor: pointer;
+} */
+.table-row {
+    cursor: pointer !important;
+}
+
+.palmyra-grid-container .table-row {
+    cursor: default;
+}
+
+.palmyra-grid-header-container {
+    width: 100%;
+    padding: 0px 0px 10px 0px;
+    /* margin-bottom: 20px; */
+    border-bottom: 1px solid;
+}
+
+.palmyra-grid-header-text-container {
+    width: 50%;
+}
+
+.palmyra-grid-header-btn-container {
+    width: 50%;
+}
+
+.palmyra-grid-header-text {
+    font-size: 18px;
+}
+
+.palmyra-grid-table-container {
+    width: auto;
+    margin-top: 20px;
+}
+
+.grid-renderer-header {
+    font-weight: lighter;
+    border-bottom: 1px solid;
+    /* margin-bottom: 20px; */
+    padding: 0px 0px 10px 0px;
+}
+
+.grid-renderer-container {
+    padding: 10px;
+    /* overflow-y: auto; */
+    /* margin-top: 5px; */
+}
+
+.header-content-text {
+    color: black;
+    font-weight: bold;
+}
+
+/* -- Drawer --  */
+.search-drawer .MuiDrawer-paper {
+    width: 30%;
+}
+
+.drawer-form-container {
+    align-items: end;
+    padding: 10px;
+}
+
+.drawer-form-container .rule-drawer-btn-container {
+    padding: 20px 5px 10px 0px;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+.drawer-form-header-container {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: space-between;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.drawer-form-header {
+    font-size: 19px;
+}
+
+.drawer-form-btn-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+/* --Dialoge-- */
+.dialog-container {
+    min-width: 500px !important;
+}
+
+.dialog-btn {
+    background-color: rgb(102, 124, 146) !important;
+}
+
+.dialog-btn:hover {
+    background-color: rgb(53, 70, 87) !important;
+}
+
+.param-dialoge-box .MuiDialog-paper {
+    min-width: 450px !important;
+}
+
+.dialog-header-container {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    width: auto;
+}
+
+.dialog-header-text-container {
+    width: 50%;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.dialog-header-icon-container {
+    text-align: end;
+    background-color: var(--cancel-btn-bgcolor);
+    color: var(--cancel-btn-color);
+    padding: 5px 5px 0 5px;
+    border-radius: 5px;
+}
+
+.dialog-cancel-icon {
+    cursor: pointer;
+}
+
+.dialog-header-border {
+    border: 1px solid;
+}
+
+.dialog-content-container {
+    padding: 20px;
+}
+
+.dialog-footer-btn-container {
+    text-align: end;
+    padding: 15px;
+    padding-right: 40px;
+}
+
+.dialog-confirm-text {
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.dialog-warn-icon {
+    font-size: 28px !important;
+    margin-left: 0px !important;
+    vertical-align: middle !important;
+    color: var(--warning-color);
+}
+
+.dialog-data-content {
+    padding: 20px 0 0 50px;
+}
+
+.dialog-data-content-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.dialog-data-content-field-label {
+    width: 30%;
+}
+
+.dialog-data-content-field-data {
+    width: 70%;
+}
+
+.dialog-btn-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: end;
+    padding: 40px 10px 10px 0;
+}
+
+/* --View Form Style Changes-- */
+
+.view-form .MuiAutocomplete-endAdornment,
+.view-form .MuiIconButton-root {
+    display: none;
+}
+
+.view-form .MuiInput-root::after,
+.view-form .MuiInput-root::before,
+.view-form .MuiInput-root:hover,
+.view-form .MuiInput-root:focus,
+.view-form .MuiOutlinedInput-notchedOutline {
+    border: none !important;
+    border-bottom: none !important;
+}

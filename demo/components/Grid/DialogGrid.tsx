@@ -1,7 +1,7 @@
-import { ColumnDefinition, FieldGroupContainer, MuiTextField } from "@palmyralabs/rt-forms-mui";
+import { ColumnDefinition, FieldGroupContainer, MuiNumberField, MuiTextField } from "@palmyralabs/rt-forms-mui";
 import storeFactory from "../Wire/StoreFactory";
-import { SummaryDialogGrid } from "../../../src/palmyra/template/dialog/SummaryDialogGrid";
 import { IEndPoint } from "@palmyralabs/palmyra-wire";
+import { SummaryPopupGrid } from "../../../src/main";
 
 
 function DialogGrid(props: any) {
@@ -30,21 +30,22 @@ function DialogGrid(props: any) {
         return (<>
             <FieldGroupContainer>
                 <MuiTextField attribute="name" label="District" />
-                {/* <MuiNumberField attribute="population" label="Population" /> */}
+                <MuiNumberField attribute="population" label="Population" />
             </FieldGroupContainer>
         </>)
     }
 
-    const endPoint: IEndPoint = { get: 'district/{id}.json', 
+    const endPoint: IEndPoint = {
+        get: 'district/{id}.json',
         query: 'district/SummaryData.json', put: 'district/{id}.json',
-        post:'district/new.json'
+        post: 'district/new.json'
     }
 
     return (
-        <SummaryDialogGrid
+        <SummaryPopupGrid popup="dialog"
             NewFormlet={Formlet} EditFormlet={Formlet}
             storeFactory={storeFactory}
-            fields={fields}
+            columns={fields}
             pageName={props.pageName}
             title={"Summary Dialog Grid"}
             options={{ endPoint }} />

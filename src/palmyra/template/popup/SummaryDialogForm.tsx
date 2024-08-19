@@ -3,8 +3,8 @@ import { FC, forwardRef, MutableRefObject, useImperativeHandle, useRef, useState
 import { Close, Done } from "@mui/icons-material";
 import { Button, Dialog } from '@mui/material';
 import { useSaveForm } from "../hooks/useSaveForm";
-import { EditForm } from "../widget/EditForm";
-import { NewForm } from "../widget/NewForm";
+import { EditForm } from "./EditForm";
+import { NewForm } from "./NewForm";
 import { StoreFactory } from "@palmyralabs/palmyra-wire";
 import { IOptions } from "../Types";
 

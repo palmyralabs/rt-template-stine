@@ -1,5 +1,5 @@
 import { IEndPoint, IEndPointOptions, StoreFactory } from "@palmyralabs/palmyra-wire"
-import { ColumnDefinition, IExportOptions } from "@palmyralabs/rt-forms-mui"
+import { ColumnDefinition, DataGridPluginOptions, GridCustomizer, IExportOptions } from "@palmyralabs/rt-forms-mui"
 
 
 interface IPageInput {
@@ -51,14 +51,28 @@ interface IFormViewInput extends IPageInput, IFormInput {
     storeFactory: any
 }
 
-interface ISummaryGridInput extends IPageInput {
+interface IGridInput {
+    customizer?: GridCustomizer,
+    quickSearch?: string,
     options: IOptions & queryOptions,
-    fields: ColumnDefinition[],
-    pagination?: number[],
+    columns: ColumnDefinition[],
+    pageSize?: number[],
     exportOptions?: IExportOptions,
+    getPluginOptions?: () => any;
+    DataGridControls?: (props: DataGridPluginOptions) => JSX.Element;
+}
+
+interface ISummaryGridInput extends IPageInput, IGridInput {
     densityOptions?: any,
     storeFactory: StoreFactory<any>
     idKey?: string
 }
 
-export type { IPageInput, IFormEditInput, IFormNewInput, IFormViewInput, ISummaryGridInput, IFormInput, IOptions }
+interface SummaryGridPluginOptions extends DataGridPluginOptions {
+    setFormData: (d: any) => void
+}
+
+export type {
+    IPageInput, IFormEditInput, IFormNewInput, IFormViewInput,
+    ISummaryGridInput, IFormInput, IOptions, SummaryGridPluginOptions
+}

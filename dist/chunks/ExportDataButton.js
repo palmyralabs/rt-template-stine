@@ -879,7 +879,7 @@ const We = T(function(t, s) {
   return f.onChange = (m) => {
     if (!t.readOnly) {
       const p = m.target.value, b = m.target.value.replace(/\D/g, "");
-      p != b && (i(b), t.onChange && t.onChange(m));
+      p == b && (i(b), t.onChange && t.onChange(m));
     }
   }, /* @__PURE__ */ n(w, { children: !d.visible && /* @__PURE__ */ n(
     z,
@@ -916,7 +916,7 @@ const We = T(function(t, s) {
   return delete f.muiProps, f.onChange = (m) => {
     if (!t.readOnly) {
       const p = m.target.value, b = m.target.value.replace(/[^\d\.\+\-]/g, "");
-      p != b && (i(b), t.onChange && t.onChange(m));
+      p == b && (i(b), t.onChange && t.onChange(m));
     }
   }, /* @__PURE__ */ n(w, { children: !d.visible && /* @__PURE__ */ n(
     z,
@@ -1053,7 +1053,7 @@ const qe = T(function(t, s) {
       customLabelClass: t.customLabelClass,
       children: /* @__PURE__ */ x(ot, { fullWidth: !0, error: l.status, children: [
         /* @__PURE__ */ n("div", { children: t.label }),
-        /* @__PURE__ */ n(ee, { icon: !0, row: c, ...f, value: r(), children: m(t.options) }),
+        /* @__PURE__ */ n(ee, { row: c, ...f, value: r(), children: m(t.options) }),
         /* @__PURE__ */ n(lt, { className: "form-error-text", children: l.message })
       ] })
     }

@@ -62,8 +62,15 @@ const AlertDialog = forwardRef(function AlertDialog(props: IAlertDialogProps, re
 
 const showDialog = (options: Omit<IAlertDialogProps, 'hidden'>, Dialog?: React.FC) => {
     const Element = Dialog || AlertDialog;
-    ReactDOM.createRoot(document.getElementById('PalmyraDialogRoot')!).render(
-        <Element {...options} />
+    const root = ReactDOM.createRoot(document.getElementById('PalmyraDialogRoot')!);
+
+    const unmount = () => {
+        root.unmount();
+        options.onClose && options.onClose();
+    }
+
+    root.render(
+        <Element {...options} onClose={unmount}/>
     )
 }
 

@@ -1,43 +1,43 @@
-import { jsx as e, Fragment as g, jsxs as y } from "react/jsx-runtime";
-import m from "react-dom";
-import { Dialog as R, DialogTitle as f, DialogContent as h, DialogActions as E, Button as p } from "@mui/material";
-import { forwardRef as D, useState as C, useRef as _, useImperativeHandle as N } from "react";
-var a = {}, r = m;
+import { jsx as o, Fragment as g, jsxs as m } from "react/jsx-runtime";
+import y from "react-dom";
+import { Dialog as R, DialogTitle as f, DialogContent as h, DialogActions as C, Button as E } from "@mui/material";
+import { forwardRef as D, useState as _, useRef as p, useImperativeHandle as N } from "react";
+var l = {}, r = y;
 if (process.env.NODE_ENV === "production")
-  a.createRoot = r.createRoot, a.hydrateRoot = r.hydrateRoot;
+  l.createRoot = r.createRoot, l.hydrateRoot = r.hydrateRoot;
 else {
-  var l = r.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-  a.createRoot = function(o, t) {
-    l.usingClientEntryPoint = !0;
+  var s = r.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+  l.createRoot = function(e, t) {
+    s.usingClientEntryPoint = !0;
     try {
-      return r.createRoot(o, t);
+      return r.createRoot(e, t);
     } finally {
-      l.usingClientEntryPoint = !1;
+      s.usingClientEntryPoint = !1;
     }
-  }, a.hydrateRoot = function(o, t, n) {
-    l.usingClientEntryPoint = !0;
+  }, l.hydrateRoot = function(e, t, n) {
+    s.usingClientEntryPoint = !0;
     try {
-      return r.hydrateRoot(o, t, n);
+      return r.hydrateRoot(e, t, n);
     } finally {
-      l.usingClientEntryPoint = !1;
+      s.usingClientEntryPoint = !1;
     }
   };
 }
 const P = D(function(t, n) {
-  const { buttonText: d = "OK" } = t, [s, i] = C(!t.hidden), u = n || _();
+  const { buttonText: a = "OK" } = t, [i, c] = _(!t.hidden), u = n || p();
   N(u, () => ({
-    hide: () => i(!1),
-    show: () => i(!0)
+    hide: () => c(!1),
+    show: () => c(!0)
   }), []);
-  const c = () => {
-    t.onClose && t.onClose(), i(!1);
+  const d = () => {
+    t.onClose && t.onClose(), c(!1);
   };
-  return /* @__PURE__ */ e(g, { children: s && /* @__PURE__ */ y(
+  return /* @__PURE__ */ o(g, { children: i && /* @__PURE__ */ m(
     R,
     {
       className: "py-alert-dialog",
-      open: s,
-      onClose: c,
+      open: i,
+      onClose: d,
       PaperProps: {
         sx: {
           borderRadius: "12px",
@@ -46,26 +46,28 @@ const P = D(function(t, n) {
         }
       },
       children: [
-        /* @__PURE__ */ e(f, { className: "py-alert-dialog-title", children: t.title }),
-        /* @__PURE__ */ e(h, { className: "py-alert-dialog-content", children: t.content }),
-        /* @__PURE__ */ e(E, { className: "py-alert-dialog-action", children: /* @__PURE__ */ e(
-          p,
+        /* @__PURE__ */ o(f, { className: "py-alert-dialog-title", children: t.title }),
+        /* @__PURE__ */ o(h, { className: "py-alert-dialog-content", children: t.content }),
+        /* @__PURE__ */ o(C, { className: "py-alert-dialog-action", children: /* @__PURE__ */ o(
+          E,
           {
-            onClick: c,
+            onClick: d,
             disableRipple: !0,
             className: "py-alert-dialog-button py-alert-dialog-button-ok",
-            children: d
+            children: a
           }
         ) })
       ]
     }
   ) });
-}), I = (o, t) => {
-  const n = t || P;
-  a.createRoot(document.getElementById("PalmyraDialogRoot")).render(
-    /* @__PURE__ */ e(n, { ...o })
+}), I = (e, t) => {
+  const n = t || P, a = l.createRoot(document.getElementById("PalmyraDialogRoot")), i = () => {
+    a.unmount(), e.onClose && e.onClose();
+  };
+  a.render(
+    /* @__PURE__ */ o(n, { ...e, onClose: i })
   );
-}, T = () => /* @__PURE__ */ e("div", { id: "PalmyraDialogRoot" });
+}, T = () => /* @__PURE__ */ o("div", { id: "PalmyraDialogRoot" });
 export {
   P as AlertDialog,
   T as PyDialogRoot,

@@ -32,7 +32,7 @@ interface IFormEditInput extends IPageInput {
     id: string,
     children?: any,
     onDataRefresh?: (data: any) => void,
-    storeFactory: any
+    storeFactory?: StoreFactory<any>
 }
 
 

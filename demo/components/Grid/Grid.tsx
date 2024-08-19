@@ -1,6 +1,7 @@
 import { ColumnDefinition } from "@palmyralabs/rt-forms-mui";
 import storeFactory from "../Wire/StoreFactory";
 import { SummaryGrid } from "../../../src/main";
+import { IEndPoint } from "@palmyralabs/palmyra-wire";
 
 
 function Grid(props: any) {
@@ -23,13 +24,19 @@ function Grid(props: any) {
         // }
     ];
 
+    const endPoint: IEndPoint = {
+        get: 'district/{id}.json',
+        query: 'district/SummaryData.json', put: 'district/{id}.json',
+        post: 'district/new.json'
+    }
+
     return (
         <SummaryGrid
             storeFactory={storeFactory}
-            fields={fields}
+            columns={fields}
             pageName={props.pageName}
             title={"Summary Grid"}
-            options={{ endPoint: '/masterdata/district' }} />
+            options={{ endPoint }} />
     );
 }
 

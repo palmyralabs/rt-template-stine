@@ -1,25 +1,35 @@
 import { useRef } from "react";
 import { ISummaryGridInput } from "../Types";
-import { PalmyraGrid, DataGridDefaultControls } from "@palmyralabs/rt-forms-mui";
+import { PalmyraGrid } from "@palmyralabs/rt-forms-mui";
+import { SummaryGridControls } from "./SummaryGridControls";
+import { useNavigate } from "react-router";
+import { StringFormat } from "@palmyralabs/ts-utils";
 
 interface IGridInput extends ISummaryGridInput {
-    customizer?: any,
     gridRef?: any,
-    customButton?: any,
-    title?: any,
-    disableViewTopic?: any
 }
 
 function SummaryGrid(props: IGridInput) {
-    const fields = props.fields;
-    const gridTopic = props.pageName + props.title;  
+    const navigate = useNavigate();
+    const idKey = props.idKey || 'id';
     const gridRef: any = props.gridRef || useRef(null);
+
+    const handleRowClick = (rowData) => {
+        const data = { id: rowData[idKey] };
+        navigate(StringFormat('edit/{id}', data));
+    }
+
+    const newRecord = () => {
+        navigate('new');
+    }
 
     return (
         <div className='grid-renderer-container'>
             <div className="palmyra-grid-container summary-grid">
-                <PalmyraGrid columns={fields} ref={gridRef} title={props.title} topic={gridTopic}
-                    DataGridControls={DataGridDefaultControls} {...props.options} />
+                <PalmyraGrid title={props.title} columns={props.columns}
+                    DataGridControls={SummaryGridControls} DataGridControlProps={{ newRecord }}
+                    onRowClick={handleRowClick} pageSize={props.pageSize} {...props.options}
+                    ref={gridRef} customizer={props.customizer} quickSearch={props.quickSearch} />
             </div>
         </div>
     );

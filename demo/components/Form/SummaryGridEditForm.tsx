@@ -8,7 +8,9 @@ const SummaryGridEditForm = () => {
     const params: any = useParams();
 
     return (<>
-        <EditForm id={params.id} options={{ endPoint: '/masterdata/district' }} pageName="" storeFactory={storeFactory} title="Edit Form">
+        <EditForm id={params.id} options={{ endPoint: '/masterdata/district' }}
+        
+        pageName="" storeFactory={storeFactory} title="Edit Form">
             <MuiTextField attribute="name" label="District" />
             {/* <MuiNumberField attribute="population" label="Population" /> */}
         </EditForm>

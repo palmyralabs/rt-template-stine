@@ -27,7 +27,7 @@ interface IFormInput {
     onCancel: () => void
 }
 
-interface IFormEditInput extends IPageInput, IFormInput {
+interface IFormEditInput extends IPageInput {
     options: IOptions,
     id: string,
     children?: any,
@@ -69,10 +69,14 @@ interface ISummaryGridInput extends IPageInput, IGridInput {
 }
 
 interface SummaryGridPluginOptions extends DataGridPluginOptions {
+    newRecord: () => void
+}
+
+interface PopupGridPluginOptions extends DataGridPluginOptions {
     setFormData: (d: any) => void
 }
 
 export type {
     IPageInput, IFormEditInput, IFormNewInput, IFormViewInput,
-    ISummaryGridInput, IFormInput, IOptions, SummaryGridPluginOptions
+    ISummaryGridInput, IFormInput, IOptions, SummaryGridPluginOptions, PopupGridPluginOptions
 }

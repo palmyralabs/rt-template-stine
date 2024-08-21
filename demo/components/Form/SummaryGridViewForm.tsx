@@ -9,7 +9,7 @@ const SummaryGridViewForm = () => {
     const params: any = useParams();
 
     return (<>
-        <ViewForm id={params.id} options={{ endPoint: '/masterdata/district' }} pageName="" storeFactory={storeFactory} title="View Form">
+        <ViewForm id={params.id} options={{ endPoint: '/masterdata/district' }} pageName="grid" storeFactory={storeFactory} title="View Form">
             <MuiTextField attribute="name" label="District" />
             {/* <MuiNumberField attribute="population" label="Population" /> */}
         </ViewForm>

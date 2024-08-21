@@ -1,22 +1,22 @@
 import { useRef } from "react";
-import { ISummaryGridInput } from "../Types";
 import { PalmyraGrid } from "@palmyralabs/rt-forms-mui";
-import { SummaryGridControls } from "./SummaryGridControls";
 import { useNavigate } from "react-router";
 import { StringFormat } from "@palmyralabs/ts-utils";
+import { ISummaryGridInput } from "../Types";
+import { SummaryGridControls } from "./SummaryGridControls";
 
 interface IGridInput extends ISummaryGridInput {
     gridRef?: any,
 }
 
-function SummaryGrid(props: IGridInput) {
+function SummaryEditGrid(props: IGridInput) {
     const navigate = useNavigate();
     const idKey = props.idKey || 'id';
     const gridRef: any = props.gridRef || useRef(null);
 
     const handleRowClick = (rowData) => {
         const data = { id: rowData[idKey] };
-        navigate(StringFormat('view/{id}', data));
+        navigate(StringFormat('edit/{id}', data));
     }
 
     const newRecord = () => {
@@ -34,4 +34,4 @@ function SummaryGrid(props: IGridInput) {
         </div>
     );
 }
-export { SummaryGrid };
+export { SummaryEditGrid };

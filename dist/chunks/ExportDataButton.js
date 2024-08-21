@@ -1,6 +1,6 @@
 import { jsx as n, Fragment as w, jsxs as x } from "react/jsx-runtime";
-import { TextField as Q, FormControl as ot, InputLabel as Qt, Select as Gt, MenuItem as _t, FormHelperText as lt, Autocomplete as Xt, CircularProgress as Jt, FormControlLabel as st, Checkbox as Kt, IconButton as te, RadioGroup as ee, Radio as wt, Rating as re, styled as Mt, Switch as ct, Button as bt, InputAdornment as ae, ClickAwayListener as se } from "@mui/material";
-import q, { forwardRef as T, useRef as M, useImperativeHandle as Y, useState as X, useEffect as yt, useMemo as ne } from "react";
+import { TextField as Q, FormControl as ot, InputLabel as Qt, Select as Gt, MenuItem as Xt, FormHelperText as lt, Autocomplete as _t, CircularProgress as Jt, FormControlLabel as st, Checkbox as Kt, IconButton as te, RadioGroup as ee, Radio as wt, Rating as re, styled as Mt, Switch as ct, Button as bt, InputAdornment as ae, ClickAwayListener as se } from "@mui/material";
+import q, { forwardRef as T, useRef as M, useImperativeHandle as Y, useState as _, useEffect as yt, useMemo as ne } from "react";
 import { useFieldManager as $, getFieldHandler as S, useServerLookupFieldManager as ie, PalmyraForm as oe } from "@palmyralabs/rt-forms";
 import O from "dayjs";
 import { LocalizationProvider as le, DatePicker as ce } from "@mui/x-date-pickers";
@@ -173,8 +173,8 @@ var At = { exports: {} };
         return function(U) {
           var V = U.afternoon;
           if (V !== void 0) {
-            var _ = U.hours;
-            V ? _ < 12 && (U.hours += 12) : _ === 12 && (U.hours = 0), delete U.afternoon;
+            var X = U.hours;
+            V ? X < 12 && (U.hours += 12) : X === 12 && (U.hours = 0), delete U.afternoon;
           }
         }(E), E;
       };
@@ -191,8 +191,8 @@ var At = { exports: {} };
           E && (F = A[2]), o = this.$locale(), !W && F && (o = C.Ls[F]), this.$d = function(tt, G, U) {
             try {
               if (["x", "X"].indexOf(G) > -1) return new Date((G === "X" ? 1e3 : 1) * tt);
-              var V = b(G)(tt), _ = V.year, et = V.month, It = V.day, Wt = V.hours, Bt = V.minutes, Ut = V.seconds, qt = V.milliseconds, Ot = V.zone, ut = /* @__PURE__ */ new Date(), dt = It || (_ || et ? 1 : ut.getDate()), ht = _ || ut.getFullYear(), rt = 0;
-              _ && !et || (rt = et > 0 ? et - 1 : ut.getMonth());
+              var V = b(G)(tt), X = V.year, et = V.month, It = V.day, Wt = V.hours, Bt = V.minutes, Ut = V.seconds, qt = V.milliseconds, Ot = V.zone, ut = /* @__PURE__ */ new Date(), dt = It || (X || et ? 1 : ut.getDate()), ht = X || ut.getFullYear(), rt = 0;
+              X && !et || (rt = et > 0 ? et - 1 : ut.getMonth());
               var ft = Wt || 0, mt = Bt || 0, pt = Ut || 0, gt = qt || 0;
               return Ot ? new Date(Date.UTC(ht, rt, dt, ft, mt, pt, gt + 60 * Ot.offset * 1e3)) : U ? new Date(Date.UTC(ht, rt, dt, ft, mt, pt, gt)) : new Date(ht, rt, dt, ft, mt, pt, gt);
             } catch {
@@ -610,7 +610,7 @@ const Se = T(function(t, s) {
         }, ...f, value: r(), inputRef: (m) => {
           c.current = m;
         }, children: f ? Object.keys(f).map(
-          (m, p) => /* @__PURE__ */ n(_t, { value: m, children: f[m] }, p)
+          (m, p) => /* @__PURE__ */ n(Xt, { value: m, children: f[m] }, p)
         ) : t.children ? t.children : /* @__PURE__ */ n("div", { children: "No options provided" }) }),
         /* @__PURE__ */ n(lt, { className: "form-error-text", children: l.message })
       ] })
@@ -625,7 +625,7 @@ const Se = T(function(t, s) {
   } else
     return (a, ...e) => a.apply(null, e);
 }, Tt = je(100), ze = T(function(t, s) {
-  const [a, e] = X(!1), r = M(null), i = ie(t.attribute, t), {
+  const [a, e] = _(!1), r = M(null), i = ie(t.attribute, t), {
     getError: d,
     getValue: o,
     setValue: l,
@@ -660,7 +660,7 @@ const Se = T(function(t, s) {
       customLabelClass: t.customLabelClass,
       children: /* @__PURE__ */ x(ot, { fullWidth: !0, error: C.status, children: [
         /* @__PURE__ */ n(
-          Xt,
+          _t,
           {
             includeInputInList: !0,
             autoHighlight: !0,
@@ -942,7 +942,7 @@ const We = T(function(t, s) {
     }
   ) });
 }), Ue = T(function(t, s) {
-  const a = $(t.attribute, t), { getError: e, getValue: r, setValue: i, mutateOptions: d } = a, o = s || M(null), l = e(), [c, h] = X(!1), f = M(null), m = (t == null ? void 0 : t.variant) || "standard";
+  const a = $(t.attribute, t), { getError: e, getValue: r, setValue: i, mutateOptions: d } = a, o = s || M(null), l = e(), [c, h] = _(!1), f = M(null), m = (t == null ? void 0 : t.variant) || "standard";
   Y(o, () => ({
     ...S(a),
     focus() {
@@ -1132,7 +1132,7 @@ const qe = T(function(t, s) {
         value: 0
       }
     };
-}, _e = Mt((t) => /* @__PURE__ */ n(ct, { ...t }))(({ theme: t }) => ({
+}, Xe = Mt((t) => /* @__PURE__ */ n(ct, { ...t }))(({ theme: t }) => ({
   width: 46,
   height: 25,
   padding: 0,
@@ -1180,7 +1180,7 @@ const qe = T(function(t, s) {
       duration: 500
     })
   }
-})), Xe = Mt(ct)(({ theme: t }) => ({
+})), _e = Mt(ct)(({ theme: t }) => ({
   padding: 8,
   "& .MuiSwitch-track": {
     borderRadius: 22 / 2,
@@ -1263,7 +1263,7 @@ const qe = T(function(t, s) {
   ), f = (v, L) => {
     var P = h.checked.value;
     return v != null && v != null ? P == v : P == L;
-  }, [m, p] = X(f(r(), t.defaultValue)), b = M(null);
+  }, [m, p] = _(f(r(), t.defaultValue)), b = M(null);
   yt(() => {
     p(f(r(), t.defaultValue));
   }, [r()]), Y(o, () => ({
@@ -1290,7 +1290,7 @@ const qe = T(function(t, s) {
     return h[v].value;
   };
   let y;
-  c == "IOSSwitch" ? y = _e : c == "Android12Switch" ? y = Xe : c == "MaterialUISwitch" ? y = Je : y = ct;
+  c == "IOSSwitch" ? y = Xe : c == "Android12Switch" ? y = _e : c == "MaterialUISwitch" ? y = Je : y = ct;
   var k = a.getFieldProps();
   return k.onChange = (v, L) => {
     t.readOnly || (i(v.target.checked), t.onChange && t.onChange(v, v.target.checked));
@@ -1496,7 +1496,7 @@ function cr(t) {
   return R({ tag: "svg", attr: { viewBox: "0 0 1024 1024" }, child: [{ tag: "path", attr: { d: "M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z" }, child: [] }] })(t);
 }
 const Mr = (t) => {
-  const { width: s, queryRef: a } = t, [e, r] = X(""), i = t.visible != !1;
+  const { width: s, queryRef: a } = t, [e, r] = _(""), i = t.visible != !1;
   return /* @__PURE__ */ x(w, { children: [
     " ",
     i && /* @__PURE__ */ n(
@@ -1520,7 +1520,7 @@ const Mr = (t) => {
     )
   ] });
 }, Zt = T(function(t, s) {
-  const [a, e] = X(!1), r = s || M();
+  const [a, e] = _(!1), r = s || M();
   Y(r, () => ({
     open() {
       e(!0);

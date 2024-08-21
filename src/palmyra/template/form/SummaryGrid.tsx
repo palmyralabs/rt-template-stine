@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { ISummaryGridInput } from "../Types";
 import { PalmyraGrid } from "@palmyralabs/rt-forms-mui";
 import { SummaryGridControls } from "./SummaryGridControls";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { StringFormat } from "@palmyralabs/ts-utils";
 
 interface IGridInput extends ISummaryGridInput {

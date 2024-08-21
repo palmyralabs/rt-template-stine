@@ -1,7 +1,7 @@
 import { ColumnDefinition } from "@palmyralabs/rt-forms-mui";
 import storeFactory from "../Wire/StoreFactory";
 import { IEndPoint } from "@palmyralabs/palmyra-wire";
-import { SummaryEditGrid } from "../../../src/main";
+import { SummaryGrid } from "../../../src/main";
 
 
 function EditGrid(props: any) {
@@ -31,7 +31,7 @@ function EditGrid(props: any) {
     }
 
     return (
-        <SummaryEditGrid
+        <SummaryGrid grid="edit"
             storeFactory={storeFactory}
             columns={fields}
             pageName={props.pageName}

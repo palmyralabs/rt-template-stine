@@ -7,6 +7,7 @@ import { StringFormat } from "@palmyralabs/ts-utils";
 
 interface IGridInput extends ISummaryGridInput {
     gridRef?: any,
+    grid?: 'view' | 'edit'
 }
 
 function SummaryGrid(props: IGridInput) {
@@ -16,7 +17,8 @@ function SummaryGrid(props: IGridInput) {
 
     const handleRowClick = (rowData) => {
         const data = { id: rowData[idKey] };
-        navigate(StringFormat('view/{id}', data));
+        const grid = props.grid || 'view'
+        navigate(StringFormat(grid + '/{id}', data));
     }
 
     const newRecord = () => {

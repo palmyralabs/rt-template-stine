@@ -1,5 +1,4 @@
-import '../../theme/Gridtemplate.css';
+import '../GridTemplate.css';
 import '../colorPallete/OrangeColors.css';
 
-export default () => <></>
-    
+export const ThemeOrange = () => <></>

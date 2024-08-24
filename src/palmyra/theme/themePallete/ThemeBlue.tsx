@@ -1,5 +1,4 @@
-import '../../theme/Gridtemplate.css';
+import '../GridTemplate.css';
 import '../colorPallete/BlueColors.css';
-// import '../../theme/colorDef.css';
 
-export default () => <></>
+export const ThemeBlue = () => <></>

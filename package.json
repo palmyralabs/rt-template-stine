@@ -8,7 +8,9 @@
   "exports": {
     ".": {
       "import": "./dist/main.js"
-    }
+    },     
+    "./ThemeBlue":"./dist/palmyra/theme/themePalette/ThemeBlue.js",     
+    "./ThemeOrange":"./dist/palmyra/theme/themePalette/ThemeOrange.js"
   },
   "files": [
     "dist"
@@ -16,6 +18,7 @@
   "scripts": {
     "start": "vite",
     "dev": "vite",
+    "demoBuild": "tsc && vite build",
     "build": "tsc --p ./build.tsconfig.json && vite --config vite.config.js build",
     "compile": "tsc --p ./demo.tsconfig.json && tsc --p ./build.tsconfig.json",
     "preview": "vite preview",

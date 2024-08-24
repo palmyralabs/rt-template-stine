@@ -6,8 +6,6 @@ import NewFormPage from './Pages/NewFormPage';
 import ViewFormPage from './Pages/ViewFormPage';
 import DrawerGridPage from './Pages/DrawerGridPage';
 import DialogGridPage from './Pages/DialogGridPage';
-
-import '../src/palmyra/template/Layout.css'
 import EditFormPage from './Pages/EditFormPage';
 import EditGridPage from './Pages/GridEditPage';
 

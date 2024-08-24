@@ -48,21 +48,21 @@ function SaveForm(props: IFormEditInput) {
     };
 
     return (
-        <div className='form-container'>
+        <div className='py-form-container'>
             <form onKeyDown={handleKeyPress}>
-                <div className='form-header-container'>
+                <div className='py-form-header-container'>
                     <div>{props.title}</div>
-                    <div className="form-header-btn-container">
+                    <div className="py-form-header-button-container">
                         <Button
-                            className='cancel-filled-button'
+                            className='py-cancel-filled-button'
                             disableRipple onClick={() => window.history.back()}>
-                            <Close className="button-icon" />
+                            <Close className="py-button-icon" />
                             Cancel
                         </Button>
                         <Button disabled={!isValid}
-                            className={!isValid ? 'disabled-button' : 'filled-button'}
+                            className={!isValid ? 'py-disabled-button' : 'py-filled-button'}
                             disableRipple onClick={saveFormData}>
-                            <Done className="button-icon" />
+                            <Done className="py-button-icon" />
                             <u style={{ width: '5px' }}>S</u>ave
                         </Button>
                     </div>

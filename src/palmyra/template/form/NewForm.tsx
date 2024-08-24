@@ -12,7 +12,7 @@ function NewForm(props: IFormNewInput) {
     const navigate = useNavigate();
     const [isValid, setValid] = useState<boolean>(false);
     const formRef = useRef<ISaveForm>();
-    const storeFactory = props.storeFactory;  
+    const storeFactory = props.storeFactory;
     const initialData = props.initialData || {};
     const pageName = props.pageName;
     const errorText = props.errorText;
@@ -49,28 +49,28 @@ function NewForm(props: IFormNewInput) {
             }
         }
     };
-    
+
     return (
-        <div className='form-container'>
+        <div className='py-form-container'>
             <form onKeyDown={handleKeyPress}>
-                <div className='form-header-container'>
+                <div className='py-form-header-container'>
                     <div>{props.title}</div>
-                    <div className="form-header-btn-container">
+                    <div className="py-form-header-button-container">
                         <Button
-                            className='cancel-filled-button'
+                            className='py-cancel-filled-button'
                             disableRipple onClick={() => window.history.back()}>
-                            <Close className="button-icon" />
+                            <Close className="py-button-icon" />
                             Cancel
                         </Button>
                         <Button disabled={!isValid}
-                            className={!isValid ? 'disabled-button' : 'filled-button'}
+                            className={!isValid ? 'py-disabled-button' : 'py-filled-button'}
                             disableRipple onClick={saveFormData}>
-                            <Done className="button-icon" />
+                            <Done className="py-button-icon" />
                             <u style={{ width: '5px' }}>S</u>ave
                         </Button>
                     </div>
                 </div>
-                <PalmyraNewForm onValidChange={setValid} {...props.options} 
+                <PalmyraNewForm onValidChange={setValid} {...props.options}
                     ref={formRef} storeFactory={storeFactory} initialData={initialData}>
                     {props.children}
                 </PalmyraNewForm>

@@ -29,6 +29,7 @@
 
 .py-default-filled-button {
     background-color: var(--default-btn-bgcolor) !important;
+    border-color: var(--outlined-btn-border-color) !important;
     color: var(--default-btn-color) !important;
 }
 

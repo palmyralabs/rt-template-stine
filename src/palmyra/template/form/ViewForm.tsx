@@ -20,20 +20,20 @@ function ViewForm(props: IFormViewInput) {
     }
 
     return (
-        <div className='form-container'>
-            <div className='form-header-container'>
+        <div className='py-form-container'>
+            <div className='py-form-header-container'>
                 <div>{props.title}</div>
-                <div className="form-header-btn-container">
+                <div className="py-form-header-button-container">
                     <Button onClick={goToGrid}
-                        className='filled-button'
+                        className='py-filled-button'
                         disableRipple >
-                        <ArrowBack className='button-icon' />
+                        <ArrowBack className='py-button-icon' />
                         Back
                     </Button>
                     <Button
-                        className='filled-button'
+                        className='py-filled-button'
                         disableRipple onClick={goToEditForm}>
-                        <BorderColor className='button-icon' />
+                        <BorderColor className='py-button-icon' />
                         Edit
                     </Button>
                 </div>

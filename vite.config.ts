@@ -8,10 +8,10 @@ import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import generalAssets from './plugins/general_assets.js'
 
 export default defineConfig({
-  plugins: [  
-  generalAssets(),
-  libInjectCss(),
-  dts({ include: ['src'] })],
+  plugins: [
+    generalAssets(),
+    libInjectCss(),
+    dts({ include: ['src'] })],
   server: {
     proxy: { "/api": "http://localhost:6060/" },
     open: true,
@@ -23,7 +23,9 @@ export default defineConfig({
       polyfill: false,
     },
     lib: {
-      entry: resolve(__dirname, 'src/main.ts'),
+      entry: [resolve(__dirname, 'src/main.ts'),
+      resolve(__dirname, 'src/blue.ts'),
+      resolve(__dirname, 'src/orange.ts')],
       name: 'TemplateStine',
       fileName: 'template-stine',
       formats: ['es']
@@ -44,7 +46,7 @@ export default defineConfig({
         'react-icons',
         'react-router-dom',
         'react/jsx-runtime',
-        'react-chartjs-2',        
+        'react-chartjs-2',
         '@emotion/react',
         '@emotion/styled',
         '@mui/x-date-pickers',
@@ -52,7 +54,7 @@ export default defineConfig({
         '@mui/icons-material',
         '@mui/styled-engine',
         '@mui/x-tree-view',
-        '@tanstack', 
+        '@tanstack',
         '@tanstack/react-table',
         '@tanstack/core-table'
       ],

@@ -9,8 +9,8 @@
     ".": {
       "import": "./dist/main.js"
     },     
-    "./ThemeBlue":"./dist/palmyra/theme/themePalette/ThemeBlue.js",     
-    "./ThemeOrange":"./dist/palmyra/theme/themePalette/ThemeOrange.js"
+    "./ThemeBlue":"./dist/blue.js",     
+    "./ThemeOrange":"./dist/orange.js"
   },
   "files": [
     "dist"

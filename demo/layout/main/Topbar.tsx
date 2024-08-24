@@ -42,12 +42,12 @@ const Topbar: React.FC<TopbarProps> = ({ mobileOpen, setMobileOpen, display }) =
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   }
-
+  const boxWidth = mobileOpen ? 'calc(100%)' : 'calc(100% - 260px)';
   return (
     <AppBar
       sx={{
-        width: { md: `calc(100%)` },
-        ml: { md: '240px' },
+        width: { md: boxWidth },
+        ml: { md: '260px' },
       }}
       className='topbar'
     >

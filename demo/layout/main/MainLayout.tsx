@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Box, CssBaseline, Toolbar } from "@mui/material";
+import { Box, CssBaseline } from "@mui/material";
 
 import Topbar from "./Topbar";
 import { useEffect, useState } from "react";
@@ -18,7 +18,6 @@ const MainLayout = (props: MainLayoutInput) => {
     sideWidth = '260px';
   }
 
-
   const { width } = useWindowSize();
   const [mobileMode, setMobileMode] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -30,11 +29,9 @@ const MainLayout = (props: MainLayoutInput) => {
   }, [responsive, setMobileOpen])
 
   const display = mobileMode ? "block" : "none";
-
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <Topbar mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} display={display} />
       <Sidebar
         SideMenu={DynamicMenu}
         appTitle={props.appTitle} width={sideWidth} mobileOpen={mobileOpen}
@@ -44,12 +41,15 @@ const MainLayout = (props: MainLayoutInput) => {
         sx={{
           flexGrow: 1,
           padding: '10px',
-          width: `calc(100%)`,
+          width: 'calc(100%)',
           minHeight: "100vh"
         }}
       >
-        <Toolbar />
-        <Outlet />
+        {/* <Toolbar /> */}
+        <Topbar mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} display={display} />
+        <div style={{ marginTop: "64px" }}>
+          <Outlet />
+        </div>
       </Box>
     </Box>
   );

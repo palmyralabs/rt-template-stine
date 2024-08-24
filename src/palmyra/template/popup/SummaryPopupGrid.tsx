@@ -6,6 +6,7 @@ import { PalmyraGrid } from "@palmyralabs/rt-forms-mui";
 import { IDialogForm, SummaryDialogForm } from "./SummaryDialogForm";
 import { SummaryDrawerForm } from "./SummaryDrawerForm";
 import { PopupGridControls } from "./PopupGridControls";
+import '../../template/Layout.css';
 
 interface IPopupGridInput extends ISummaryGridInput {
     EditFormlet: FC,
@@ -62,18 +63,13 @@ function SummaryPopupGrid(props: IPopupGridInput) {
 
     const PopupForm = popup == 'drawer' ? SummaryDrawerForm : SummaryDialogForm
 
-    return (<>
-        <div className='grid-renderer-container'>
-            {/* <div className="grid-renderer-header">{props?.title}</div> */}
-            <div className="palmyra-grid-container summary-drawer-grid">
-                <PalmyraGrid title={title} columns={props.columns} DataGridControlProps={{setFormData: setData}}
-                    DataGridControls={DataGridControls} onRowClick={handleRowClick}
-                    pageSize={props.pageSize} {...props.options} getPluginOptions={props.getPluginOptions}
-                    ref={gridRef} customizer={props.customizer} quickSearch={props.quickSearch} />
-            </div>
-        </div>
+    return (<div className="py-grid-container">
+        <PalmyraGrid title={title} columns={props.columns} DataGridControlProps={{ setFormData: setData }}
+            DataGridControls={DataGridControls} onRowClick={handleRowClick}
+            pageSize={props.pageSize} {...props.options} getPluginOptions={props.getPluginOptions}
+            ref={gridRef} customizer={props.customizer} quickSearch={props.quickSearch} />
         <PopupForm {...props} gridRef={gridRef} ref={dialogFormRef} />
-    </>
+    </div>
     );
 }
 

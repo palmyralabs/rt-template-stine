@@ -4,6 +4,7 @@ import { PalmyraGrid } from "@palmyralabs/rt-forms-mui";
 import { SummaryGridControls } from "./SummaryGridControls";
 import { useNavigate } from "react-router-dom";
 import { StringFormat } from "@palmyralabs/ts-utils";
+import '../../template/Layout.css';
 
 interface IGridInput extends ISummaryGridInput {
     gridRef?: any,

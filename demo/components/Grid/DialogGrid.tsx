@@ -41,14 +41,14 @@ function DialogGrid(props: any) {
         post: 'district/new.json'
     }
 
-    return (
+    return (<div className="py-grid-container">
         <SummaryPopupGrid popup="dialog"
             NewFormlet={Formlet} EditFormlet={Formlet}
             storeFactory={storeFactory}
             columns={fields}
             pageName={props.pageName}
             title={"Summary Dialog Grid"}
-            options={{ endPoint }} />
+            options={{ endPoint }} /></div>
     );
 }
 

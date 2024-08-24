@@ -77,10 +77,10 @@ const SummaryDialogForm = forwardRef((props: IDialogGridFormInput, ref: MutableR
                     }
                 }}
             >
-                <div className='drawer-form-header-container'>
+                <div className='py-form-header-container'>
                     <div>{title}</div>
-                    <div className='grid-dialog-header-right-container'>
-                        <Close onClick={doCancel} className='grid-dialog-header-close-icon' />
+                    <div className='py-dialog-header-right-container'>
+                        <Close onClick={doCancel} className='py-header-close-icon' />
                     </div>
                 </div>
                 {data?.[idKey] ?
@@ -90,17 +90,17 @@ const SummaryDialogForm = forwardRef((props: IDialogGridFormInput, ref: MutableR
                     : <NewForm setValid={setValid} storeFactory={storeFactory} formRef={formRef}
                         handleKeyPress={handleKeyPress} options={props.options}
                         {...props.options} initialData={data} FORMLET={NewFormlet} />}
-                <div className="drawer-form-btn-container">
+                <div className="py-drawer-form-btn-container">
                     <Button
-                        className='cancel-filled-button'
+                        className='py-cancel-filled-button'
                         onClick={doCancel} tabIndex={-1}>
-                        <Close className="button-icon" />
+                        <Close className="py-button-icon" />
                         Cancel
                     </Button>
                     <Button disabled={!isValid}
-                        className={!isValid ? 'disabled-button' : 'filled-button'}
+                        className={!isValid ? 'py-disabled-button' : 'py-filled-button'}
                         onClick={doSaveClose}>
-                        <Done className="button-icon" />
+                        <Done className="py-button-icon" />
                         <u style={{ width: '5px' }}>S</u>ave
                     </Button>
                 </div>

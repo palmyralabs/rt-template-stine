@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --primary-fontsize: 1.5em;
     --secondary-fontsize: 0.9em;
     --left-menu-fontsize: 1.01em;
@@ -78,7 +78,7 @@ body {
     cursor: not-allowed;
 }
 
-/* --Palmyra Dialog */
+/* --Palmyra Dialog *
 .palmyra-dialog-form-header-container {
     display: flex;
     align-items: center;
@@ -112,15 +112,7 @@ body {
     font-size: 1.25rem;
 }
 
-/* -- Grid Dialog-- */
-/* .grid-dialog .MuiDialog-paper {
-    min-width: 800px !important;
-} */
-
-/* .grid-export-btn .density-dropdown-content ul li {
-pointer-events: none;
-    opacity: 0.25;
-} */
+/* -- Grid Dialog-- 
 
 .grid-filter-content {
     padding: 10px 30px 10px 30px;
@@ -138,7 +130,6 @@ pointer-events: none;
 }
 
 .grid-dialog-header-right-container {
-    /* width: 50%; */
     text-align: end;
     background-color: var(--cancel-btn-bgcolor);
     color: var(--cancel-btn-color);
@@ -160,7 +151,7 @@ pointer-events: none;
     cursor: pointer;
 }
 
-/* -- Form -- */
+/* -- Form -- 
 
 .form-container {
     padding: 10px;
@@ -193,7 +184,7 @@ pointer-events: none;
     text-align: end !important;
 }
 
-/* -- View Form -- */
+/* -- View Form -- 
 
 .user-view-form-container {
     display: flex;
@@ -226,7 +217,7 @@ pointer-events: none;
     width: 100%;
 }
 
-/* -- Grid -- */
+/* -- Grid -- 
 .grid-header-right-content-text {
     color: black;
     font-weight: bold;
@@ -254,15 +245,9 @@ pointer-events: none;
 
 .palmyra-grid-container {
     width: 100%;
-    /* padding: 20px; */
     margin-top: 10px;
 }
 
-/* .summary-drawer-grid .table-row,
-.summary-edit-grid .table-row,
-.summary-grid .table-row {
-    cursor: pointer;
-} */
 .table-row {
     cursor: pointer !important;
 }
@@ -274,7 +259,6 @@ pointer-events: none;
 .palmyra-grid-header-container {
     width: 100%;
     padding: 0px 0px 10px 0px;
-    /* margin-bottom: 20px; */
     border-bottom: 1px solid;
 }
 
@@ -298,22 +282,18 @@ pointer-events: none;
 .grid-renderer-header {
     font-weight: lighter;
     border-bottom: 1px solid;
-    /* margin-bottom: 20px; */
     padding: 0px 0px 10px 0px;
 }
 
 .grid-renderer-container {
     padding: 10px;
-    /* overflow-y: auto; */
-    /* margin-top: 5px; */
 }
 
 .header-content-text {
     color: black;
     font-weight: bold;
 }
-
-/* -- Drawer --  */
+/* -- Drawer --  
 .search-drawer .MuiDrawer-paper {
     width: 30%;
 }
@@ -349,8 +329,7 @@ pointer-events: none;
     gap: 10px;
     margin-top: 25px;
 }
-
-/* --Dialoge-- */
+/* --Dialoge-- 
 .dialog-container {
     min-width: 500px !important;
 }
@@ -450,7 +429,7 @@ pointer-events: none;
     padding: 40px 10px 10px 0;
 }
 
-/* --View Form Style Changes-- */
+/* --View Form Style Changes-- 
 
 .view-form .MuiAutocomplete-endAdornment,
 .view-form .MuiIconButton-root {
@@ -464,4 +443,131 @@ pointer-events: none;
 .view-form .MuiOutlinedInput-notchedOutline {
     border: none !important;
     border-bottom: none !important;
+} */
+/* -- Button Style -- */
+.py-filled-button {
+    border-radius: 5px !important;
+    gap: 5px !important;
+    font-size: 14px !important;
+    text-transform: none !important;
+    cursor: pointer;
+}
+
+.py-secondary-filled-button {
+    border-radius: 5px !important;
+    gap: 5px !important;
+    font-size: 14px !important;
+    cursor: pointer;
+    text-transform: none !important;
+}
+
+.py-cancel-filled-button {
+    border-radius: 5px !important;
+    gap: 5px !important;
+    font-size: 14px !important;
+    cursor: pointer;
+    text-transform: none !important;
+}
+
+.py-cancel-oulined-button {
+    border-radius: 5px !important;
+    gap: 5px !important;
+    font-size: 14px !important;
+    border: 1px solid !important;
+    cursor: pointer;
+    text-transform: none !important;
+}
+
+.py-default-filled-button {
+    border-radius: 5px !important;
+    gap: 8px !important;
+    font-size: 14px !important;
+    cursor: pointer;
+    text-transform: none !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.py-outlined-button {
+    border-radius: 5px !important;
+    font-size: 14px !important;
+    gap: 8px !important;
+    border: 1px solid !important;
+    text-transform: none !important;
+    cursor: pointer;
+}
+
+.py-outlined-button:hover {
+    box-shadow: none !important;
+}
+
+.py-button-icon {
+    font-size: 16px !important;
+    margin-left: 0px !important;
+    vertical-align: middle !important;
+    cursor: pointer !important;
+}
+
+.py-disabled-button {
+    border-radius: 5px !important;
+    gap: 5px !important;
+    text-transform: none !important;
+    cursor: not-allowed;
+}
+
+.py-form-header-container {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: space-between;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.py-drawer-form-btn-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.py-dialog-header-right-container,
+.py-drawer-header-right-container {
+    text-align: end;
+    padding: 5px 5px 0 5px;
+    border-radius: 5px;
+    text-align: end;
+}
+
+.py-drawer-header-text {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.py-drawer-content-container {
+    padding: 10px;
+}
+
+.py-header-close-icon {
+    cursor: pointer;
+}
+
+/* -- Grid Style  -- */
+.py-grid-container {
+    padding: 10px;
+}
+
+.py-data-grid-table {
+    margin-top: 10px;
+}
+
+.py-baseGrid {
+    border-radius: 5px !important;
+    border: 1px solid;
+    border-collapse: separate !important;
+}
+
+.py-grid-header-row,
+.py-grid-data-cell {
+    border-bottom-left-radius: 0px !important;
+    border-collapse: unset !important;
 }

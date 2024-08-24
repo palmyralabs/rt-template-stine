@@ -46,10 +46,9 @@ function DrawerGrid(props: any) {
     }
 
     const CustomControl = (props: PopupGridPluginOptions) => {
-        console.log(props);
         return (<>
-            <Button onClick={() => { }} >Transfer</Button>
             <PopupGridControls {...props} />
+            <Button onClick={() => { }} disableRipple className="py-action-button">Transfer</Button>
         </>);
     }
 
@@ -57,12 +56,12 @@ function DrawerGrid(props: any) {
         return { export: { visible: false } }
     }
 
-    return (
+    return (<div className="py-grid-container">
         <SummaryPopupGrid NewFormlet={Formlet} EditFormlet={Formlet}
             getPluginOptions={getPluginOptions} DataGridControls={CustomControl}
             storeFactory={storeFactory} columns={fields} quickSearch="name"
             pageName={props.pageName} title={"Summary Popup Grid"}
-            options={{ endPoint }} />
+            options={{ endPoint }} /></div>
     );
 }
 

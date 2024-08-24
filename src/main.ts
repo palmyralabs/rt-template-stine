@@ -1,2 +1,2 @@
 export * from './palmyra/template'
-export * from './palmyra/theme/blue/ThemeBlue'
+export * from './palmyra/theme/themePallete/ThemeBlue'

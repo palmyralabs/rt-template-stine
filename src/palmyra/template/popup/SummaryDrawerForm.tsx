@@ -68,32 +68,34 @@ const SummaryDrawerForm = forwardRef((props: IDialogGridFormInput, ref: MutableR
 
     return (<Drawer anchor="right" PaperProps={{ sx: { width: drawerWidth } }}
         open={drawerOpen} onClose={onCancel}>
-        <div className='drawer-form-header-container'>
-            <div>{title}</div>
-            <div className='grid-dialog-header-right-container'>
-                <Close onClick={doCancel} className='grid-dialog-header-close-icon' />
+        <div className="py-drawer-content-container">
+            <div className='py-form-header-container'>
+                <div>{title}</div>
+                <div className='py-drawer-header-right-container'>
+                    <Close onClick={doCancel} className='py-header-close-icon' />
+                </div>
             </div>
-        </div>
-        {data?.[idKey] ?
-            <EditForm setValid={setValid} storeFactory={storeFactory} formRef={formRef}
-                handleKeyPress={handleKeyPress} options={props.options}
-                {...props.options} id={data?.[idKey]} FORMLET={EditFormlet} />
-            : <NewForm setValid={setValid} storeFactory={storeFactory} formRef={formRef}
-                handleKeyPress={handleKeyPress} options={props.options}
-                {...props.options} initialData={data} FORMLET={NewFormlet} />}
-        <div className="drawer-form-btn-container">
-            <Button
-                className='cancel-filled-button'
-                onClick={doCancel} tabIndex={-1}>
-                <Close className="button-icon" />
-                Cancel
-            </Button>
-            <Button disabled={!isValid}
-                className={!isValid ? 'disabled-button' : 'filled-button'}
-                onClick={doSaveClose}>
-                <Done className="button-icon" />
-                <u style={{ width: '5px' }}>S</u>ave
-            </Button>
+            {data?.[idKey] ?
+                <EditForm setValid={setValid} storeFactory={storeFactory} formRef={formRef}
+                    handleKeyPress={handleKeyPress} options={props.options}
+                    {...props.options} id={data?.[idKey]} FORMLET={EditFormlet} />
+                : <NewForm setValid={setValid} storeFactory={storeFactory} formRef={formRef}
+                    handleKeyPress={handleKeyPress} options={props.options}
+                    {...props.options} initialData={data} FORMLET={NewFormlet} />}
+            <div className="py-drawer-form-btn-container">
+                <Button
+                    className='py-cancel-filled-button'
+                    onClick={doCancel} tabIndex={-1}>
+                    <Close className="py-button-icon" />
+                    Cancel
+                </Button>
+                <Button disabled={!isValid}
+                    className={!isValid ? 'py-disabled-button' : 'py-filled-button'}
+                    onClick={doSaveClose}>
+                    <Done className="py-button-icon" />
+                    <u style={{ width: '5px' }}>S</u>ave
+                </Button>
+            </div>
         </div>
     </Drawer>);
 });

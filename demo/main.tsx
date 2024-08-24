@@ -4,12 +4,13 @@ import App from '../demo/App.tsx'
 import './index.css'
 import { StoreFactoryContext } from '@palmyralabs/rt-forms'
 import storeFactory from './components/Wire/StoreFactory.ts'
-import ThemeBlue from '../src/palmyra/theme/blue/ThemeBlue.tsx'
+// import ThemeOrange from '../src/palmyra/theme/themePallete/ThemeOrange.tsx'
+import ThemeBlue from '../src/palmyra/theme/themePallete/ThemeBlue.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <StoreFactoryContext.Provider value={storeFactory}>
-      <ThemeBlue/>
+      <ThemeBlue />
       <App />
     </StoreFactoryContext.Provider>
   </React.StrictMode>,

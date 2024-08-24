@@ -26,14 +26,12 @@ function SummaryGrid(props: IGridInput) {
     }
 
     return (
-        <div className='grid-renderer-container'>
-            <div className="palmyra-grid-container summary-grid">
-                <PalmyraGrid title={props.title} columns={props.columns}
-                    getPluginOptions={props.getPluginOptions}
-                    DataGridControls={SummaryGridControls} DataGridControlProps={{ newRecord }}
-                    onRowClick={handleRowClick} pageSize={props.pageSize} {...props.options}
-                    ref={gridRef} customizer={props.customizer} quickSearch={props.quickSearch} />
-            </div>
+        <div className="py-grid-container">
+            <PalmyraGrid title={props.title} columns={props.columns}
+                getPluginOptions={props.getPluginOptions}
+                DataGridControls={SummaryGridControls} DataGridControlProps={{ newRecord }}
+                onRowClick={handleRowClick} pageSize={props.pageSize} {...props.options}
+                ref={gridRef} customizer={props.customizer} quickSearch={props.quickSearch} />
         </div>
     );
 }

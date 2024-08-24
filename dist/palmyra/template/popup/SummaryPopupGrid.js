@@ -1,62 +1,62 @@
-import { jsxs as v, Fragment as D, jsx as u } from "react/jsx-runtime";
-import { useRef as d, useEffect as S } from "react";
-import { A as n, F } from "../../../chunks/NoopConverter.js";
+import { jsxs as N, jsx as l } from "react/jsx-runtime";
+import { useRef as f, useEffect as S } from "react";
+import { A as s, F as v } from "../../../chunks/Layout.js";
 import "dayjs";
 import "@mui/material";
 import "../../../chunks/ExportDataButton.js";
 import "@tanstack/react-table";
 import { SummaryDialogForm as C } from "./SummaryDialogForm.js";
-import { SummaryDrawerForm as R } from "./SummaryDrawerForm.js";
-import { PopupGridControls as y } from "./PopupGridControls.js";
+import { SummaryDrawerForm as F } from "./SummaryDrawerForm.js";
+import { PopupGridControls as R } from "./PopupGridControls.js";
 class G {
   subscribe(r, t) {
-    const s = n.subscribe(r, t);
-    if (s)
-      return s;
+    const n = s.subscribe(r, t);
+    if (n)
+      return n;
     throw new Error("Not able to subscribe to topic " + r);
   }
   publish(r, t) {
-    return n.publish(r, t);
+    return s.publish(r, t);
   }
   unsubscribe(r) {
-    n.unsubscribe(r);
+    s.unsubscribe(r);
   }
   unsubsribeTopic(r) {
-    n.unsubscribe(r);
+    s.unsubscribe(r);
   }
   reset() {
-    n.clearAllSubscriptions();
+    s.clearAllSubscriptions();
   }
 }
 const i = new G();
-function O(e) {
-  const r = e.pageName + "/viewPage", t = e.pageName + "/newPage", s = e.pageName + "/refresh", f = e.title, g = e.popup || "drawer", m = d(), c = e.gridRef || d(null);
+function E(e) {
+  const r = e.pageName + "/viewPage", t = e.pageName + "/newPage", n = e.pageName + "/refresh", g = e.title, p = e.popup || "drawer", a = f(), c = e.gridRef || f(null);
   S(() => {
-    var o = i.subscribe(r, (b, l) => {
-      a(l);
-    }), P = i.subscribe(s, (b) => {
+    var o = i.subscribe(r, (b, m) => {
+      u(m);
+    }), P = i.subscribe(n, (b) => {
       c.current && c.current.refresh();
-    }), N = i.subscribe(t, (b, l) => {
-      a(l);
+    }), D = i.subscribe(t, (b, m) => {
+      u(m);
     });
     return () => {
-      i.unsubscribe(o), i.unsubscribe(N), i.unsubscribe(P);
+      i.unsubscribe(o), i.unsubscribe(D), i.unsubscribe(P);
     };
   }, []);
-  const p = (o) => {
-    a(o);
-  }, a = (o) => {
-    m.current && m.current.setData(o);
-  }, w = e.DataGridControls || y, h = g == "drawer" ? R : C;
-  return /* @__PURE__ */ v(D, { children: [
-    /* @__PURE__ */ u("div", { className: "grid-renderer-container", children: /* @__PURE__ */ u("div", { className: "palmyra-grid-container summary-drawer-grid", children: /* @__PURE__ */ u(
-      F,
+  const d = (o) => {
+    u(o);
+  }, u = (o) => {
+    a.current && a.current.setData(o);
+  }, w = e.DataGridControls || R, h = p == "drawer" ? F : C;
+  return /* @__PURE__ */ N("div", { className: "py-grid-container", children: [
+    /* @__PURE__ */ l(
+      v,
       {
-        title: f,
+        title: g,
         columns: e.columns,
-        DataGridControlProps: { setFormData: a },
+        DataGridControlProps: { setFormData: u },
         DataGridControls: w,
-        onRowClick: p,
+        onRowClick: d,
         pageSize: e.pageSize,
         ...e.options,
         getPluginOptions: e.getPluginOptions,
@@ -64,10 +64,10 @@ function O(e) {
         customizer: e.customizer,
         quickSearch: e.quickSearch
       }
-    ) }) }),
-    /* @__PURE__ */ u(h, { ...e, gridRef: c, ref: m })
+    ),
+    /* @__PURE__ */ l(h, { ...e, gridRef: c, ref: a })
   ] });
 }
 export {
-  O as SummaryPopupGrid
+  E as SummaryPopupGrid
 };

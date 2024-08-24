@@ -3,7 +3,7 @@ import { useRef as u } from "react";
 import "@mui/material";
 import "../../../chunks/ExportDataButton.js";
 import "@tanstack/react-table";
-import { F as d } from "../../../chunks/NoopConverter.js";
+import { F as d } from "../../../chunks/Layout.js";
 import { SummaryGridControls as s } from "./SummaryGridControls.js";
 import { useNavigate as g } from "react-router-dom";
 import "dayjs";

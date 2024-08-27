@@ -26,11 +26,13 @@ function SummaryGrid(props: IGridInput) {
         navigate('new');
     }
 
+    const DataGridControls = props.DataGridControls || SummaryGridControls
+
     return (
         <div className="py-grid-container">
             <PalmyraGrid title={props.title} columns={props.columns}
                 getPluginOptions={props.getPluginOptions}
-                DataGridControls={SummaryGridControls} DataGridControlProps={{ newRecord }}
+                DataGridControls={DataGridControls} DataGridControlProps={{ newRecord }}
                 onRowClick={handleRowClick} pageSize={props.pageSize} {...props.options}
                 ref={gridRef} customizer={props.customizer} quickSearch={props.quickSearch} />
         </div>

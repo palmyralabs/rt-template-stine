@@ -174,11 +174,11 @@ body {
 
 .py-data-grid-table {
     margin-top: 10px;
+    border: 1px solid;
 }
 
 .py-baseGrid {
     border-radius: 5px !important;
-    border: 1px solid;
     border-collapse: separate !important;
 }
 

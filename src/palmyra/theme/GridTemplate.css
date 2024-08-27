@@ -90,7 +90,7 @@
     color: var(--filled-btn-bgcolor) !important;
 }
 
-.py-baseGrid {
+.py-data-grid-table {
     border-color: var(--border-color) !important;
 }
 

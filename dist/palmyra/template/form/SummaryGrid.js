@@ -1,29 +1,27 @@
-import { jsx as o } from "react/jsx-runtime";
+import { jsx as n } from "react/jsx-runtime";
 import { useRef as u } from "react";
-import "@mui/material";
-import "../../../chunks/ExportDataButton.js";
-import "@tanstack/react-table";
-import { F as d } from "../../../chunks/Layout.js";
+import { PalmyraGrid as d } from "@palmyralabs/rt-forms-mui";
 import { SummaryGridControls as s } from "./SummaryGridControls.js";
 import { useNavigate as g } from "react-router-dom";
+import "../../../chunks/Layout.js";
 import "dayjs";
-const f = function(t, i) {
-  return i ? typeof t == "string" && i instanceof Array ? t.replace(/({\d})/g, function(e) {
-    let r = e.replace(/{/, "").replace(/}/, "");
-    return i[r];
-  }) : typeof t == "string" && i instanceof Object ? Object.keys(i).length === 0 ? t : t.replace(/({([^}]+)})/g, function(e) {
-    let r = e.replace(/{/, "").replace(/}/, "");
-    return i[r] ? i[r] : e;
+const f = function(t, e) {
+  return e ? typeof t == "string" && e instanceof Array ? t.replace(/({\d})/g, function(i) {
+    let r = i.replace(/{/, "").replace(/}/, "");
+    return e[r];
+  }) : typeof t == "string" && e instanceof Object ? Object.keys(e).length === 0 ? t : t.replace(/({([^}]+)})/g, function(i) {
+    let r = i.replace(/{/, "").replace(/}/, "");
+    return e[r] ? e[r] : i;
   }) : t : t;
 };
-function z(t) {
-  const i = g(), e = t.idKey || "id", r = t.gridRef || u(null), n = (a) => {
-    const l = { id: a[e] }, m = t.grid || "view";
-    i(f(m + "/{id}", l));
+function C(t) {
+  const e = g(), i = t.idKey || "id", r = t.gridRef || u(null), o = (a) => {
+    const l = { id: a[i] }, m = t.grid || "view";
+    e(f(m + "/{id}", l));
   }, c = () => {
-    i("new");
+    e("new");
   };
-  return /* @__PURE__ */ o("div", { className: "py-grid-container", children: /* @__PURE__ */ o(
+  return /* @__PURE__ */ n("div", { className: "py-grid-container", children: /* @__PURE__ */ n(
     d,
     {
       title: t.title,
@@ -31,7 +29,7 @@ function z(t) {
       getPluginOptions: t.getPluginOptions,
       DataGridControls: s,
       DataGridControlProps: { newRecord: c },
-      onRowClick: n,
+      onRowClick: o,
       pageSize: t.pageSize,
       ...t.options,
       ref: r,
@@ -41,5 +39,5 @@ function z(t) {
   ) });
 }
 export {
-  z as SummaryGrid
+  C as SummaryGrid
 };

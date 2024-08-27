@@ -6,17 +6,17 @@ import { useNavigate as D } from "react-router-dom";
 import { B as l } from "../../../chunks/react-toastify.esm.js";
 import { PalmyraEditForm as w } from "@palmyralabs/rt-forms";
 function E(e) {
-  const d = D(), [o, m] = g(!1), r = N(), f = e.storeFactory, h = e.id, u = e.pageName, y = () => {
+  const d = D(), [n, m] = g(!1), r = N(), f = e.storeFactory, h = e.id, u = e.pageName, y = () => {
     l.error("Something went wrong Please try again later.. ");
   }, i = () => {
-    r.current.saveData().then((n) => {
-      e.successMsg && l.success(e.successMsg), d("../" + u);
-    }).catch((n) => {
-      n.response && n.response.status === 500 && y();
+    r.current.saveData().then((o) => {
+      o && (e.successMsg && l.success(e.successMsg), d("../" + u));
+    }).catch((o) => {
+      o.response && o.response.status === 500 && y();
     });
   }, b = (t) => (e.onDataRefresh && e.onDataRefresh(t), t);
   return /* @__PURE__ */ a("div", { className: "py-form-container", children: /* @__PURE__ */ s("form", { onKeyDown: (t) => {
-    t.ctrlKey && t.key === "s" && (t.preventDefault(), o && i());
+    t.ctrlKey && t.key === "s" && (t.preventDefault(), n && i());
   }, children: [
     /* @__PURE__ */ s("div", { className: "py-form-header-container", children: [
       /* @__PURE__ */ a("div", { children: e.title }),
@@ -36,8 +36,8 @@ function E(e) {
         /* @__PURE__ */ s(
           c,
           {
-            disabled: !o,
-            className: o ? "py-filled-button" : "py-disabled-button",
+            disabled: !n,
+            className: n ? "py-filled-button" : "py-disabled-button",
             disableRipple: !0,
             onClick: i,
             children: [

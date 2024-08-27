@@ -39,6 +39,7 @@ export default defineConfig({
         'dayjs',
         '@palmyralabs/palmyra-wire',
         '@palmyralabs/rt-forms',
+        '@palmyralabs/rt-forms-mui',
         'jspdf',
         'react',
         'html2canvas',

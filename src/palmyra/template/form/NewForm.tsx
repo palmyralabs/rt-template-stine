@@ -30,9 +30,11 @@ function NewForm(props: IFormNewInput) {
 
     const saveFormData = () => {
         formRef.current.saveData().then((_d: any) => {
-            if (props.successMsg)
-                toast.success(props.successMsg);
-            return navigate('../' + pageName);
+            if (_d) {
+                if (props.successMsg)
+                    toast.success(props.successMsg);
+                return navigate('../' + pageName);
+            }
         }).catch((e) => {
             if (e.response && e.response.status === 400) {
                 showUniqueErrorToast()

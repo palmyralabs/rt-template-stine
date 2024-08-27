@@ -1,14 +1,12 @@
 import { jsxs as N, jsx as l } from "react/jsx-runtime";
 import { useRef as f, useEffect as S } from "react";
-import { A as s, F as v } from "../../../chunks/Layout.js";
+import { A as s } from "../../../chunks/Layout.js";
 import "dayjs";
-import "@mui/material";
-import "../../../chunks/ExportDataButton.js";
-import "@tanstack/react-table";
+import { PalmyraGrid as v } from "@palmyralabs/rt-forms-mui";
 import { SummaryDialogForm as C } from "./SummaryDialogForm.js";
-import { SummaryDrawerForm as F } from "./SummaryDrawerForm.js";
+import { SummaryDrawerForm as G } from "./SummaryDrawerForm.js";
 import { PopupGridControls as R } from "./PopupGridControls.js";
-class G {
+class y {
   subscribe(r, t) {
     const n = s.subscribe(r, t);
     if (n)
@@ -28,35 +26,35 @@ class G {
     s.clearAllSubscriptions();
   }
 }
-const i = new G();
-function E(e) {
-  const r = e.pageName + "/viewPage", t = e.pageName + "/newPage", n = e.pageName + "/refresh", g = e.title, p = e.popup || "drawer", a = f(), c = e.gridRef || f(null);
+const i = new y();
+function q(e) {
+  const r = e.pageName + "/viewPage", t = e.pageName + "/newPage", n = e.pageName + "/refresh", d = e.title, g = e.popup || "drawer", u = f(), c = e.gridRef || f(null);
   S(() => {
     var o = i.subscribe(r, (b, m) => {
-      u(m);
+      a(m);
     }), P = i.subscribe(n, (b) => {
       c.current && c.current.refresh();
     }), D = i.subscribe(t, (b, m) => {
-      u(m);
+      a(m);
     });
     return () => {
       i.unsubscribe(o), i.unsubscribe(D), i.unsubscribe(P);
     };
   }, []);
-  const d = (o) => {
-    u(o);
-  }, u = (o) => {
-    a.current && a.current.setData(o);
-  }, w = e.DataGridControls || R, h = p == "drawer" ? F : C;
+  const p = (o) => {
+    a(o);
+  }, a = (o) => {
+    u.current && u.current.setData(o);
+  }, w = e.DataGridControls || R, h = g == "drawer" ? G : C;
   return /* @__PURE__ */ N("div", { className: "py-grid-container", children: [
     /* @__PURE__ */ l(
       v,
       {
-        title: g,
+        title: d,
         columns: e.columns,
-        DataGridControlProps: { setFormData: u },
+        DataGridControlProps: { setFormData: a },
         DataGridControls: w,
-        onRowClick: d,
+        onRowClick: p,
         pageSize: e.pageSize,
         ...e.options,
         getPluginOptions: e.getPluginOptions,
@@ -65,9 +63,9 @@ function E(e) {
         quickSearch: e.quickSearch
       }
     ),
-    /* @__PURE__ */ l(h, { ...e, gridRef: c, ref: a })
+    /* @__PURE__ */ l(h, { ...e, gridRef: c, ref: u })
   ] });
 }
 export {
-  E as SummaryPopupGrid
+  q as SummaryPopupGrid
 };

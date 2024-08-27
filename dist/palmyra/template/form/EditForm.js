@@ -1,45 +1,45 @@
-import { jsx as a, jsxs as o } from "react/jsx-runtime";
-import { useState as p, useRef as b } from "react";
+import { jsx as a, jsxs as s } from "react/jsx-runtime";
+import { useState as g, useRef as N } from "react";
 import { Button as c } from "@mui/material";
-import { Close as N, Done as v } from "@mui/icons-material";
-import { useNavigate as g } from "react-router-dom";
-import { B as D } from "../../../chunks/react-toastify.esm.js";
+import { Close as p, Done as v } from "@mui/icons-material";
+import { useNavigate as D } from "react-router-dom";
+import { B as l } from "../../../chunks/react-toastify.esm.js";
 import { PalmyraEditForm as w } from "@palmyralabs/rt-forms";
 function E(e) {
-  const l = g(), [r, d] = p(!1), i = b(), m = e.storeFactory, f = e.id, h = e.pageName, u = () => {
-    D.error("Something went wrong Please try again later.. ");
-  }, s = () => {
-    i.current.saveData().then((n) => {
-      l("../" + h);
+  const d = D(), [o, m] = g(!1), r = N(), f = e.storeFactory, h = e.id, u = e.pageName, y = () => {
+    l.error("Something went wrong Please try again later.. ");
+  }, i = () => {
+    r.current.saveData().then((n) => {
+      e.successMsg && l.success(e.successMsg), d("../" + u);
     }).catch((n) => {
-      n.response && n.response.status === 500 && u();
+      n.response && n.response.status === 500 && y();
     });
-  }, y = (t) => (e.onDataRefresh && e.onDataRefresh(t), t);
-  return /* @__PURE__ */ a("div", { className: "py-form-container", children: /* @__PURE__ */ o("form", { onKeyDown: (t) => {
-    t.ctrlKey && t.key === "s" && (t.preventDefault(), r && s());
+  }, b = (t) => (e.onDataRefresh && e.onDataRefresh(t), t);
+  return /* @__PURE__ */ a("div", { className: "py-form-container", children: /* @__PURE__ */ s("form", { onKeyDown: (t) => {
+    t.ctrlKey && t.key === "s" && (t.preventDefault(), o && i());
   }, children: [
-    /* @__PURE__ */ o("div", { className: "py-form-header-container", children: [
+    /* @__PURE__ */ s("div", { className: "py-form-header-container", children: [
       /* @__PURE__ */ a("div", { children: e.title }),
-      /* @__PURE__ */ o("div", { className: "py-form-header-button-container", children: [
-        /* @__PURE__ */ o(
+      /* @__PURE__ */ s("div", { className: "py-form-header-button-container", children: [
+        /* @__PURE__ */ s(
           c,
           {
             className: "py-cancel-filled-button",
             disableRipple: !0,
             onClick: () => window.history.back(),
             children: [
-              /* @__PURE__ */ a(N, { className: "py-button-icon" }),
+              /* @__PURE__ */ a(p, { className: "py-button-icon" }),
               "Cancel"
             ]
           }
         ),
-        /* @__PURE__ */ o(
+        /* @__PURE__ */ s(
           c,
           {
-            disabled: !r,
-            className: r ? "py-filled-button" : "py-disabled-button",
+            disabled: !o,
+            className: o ? "py-filled-button" : "py-disabled-button",
             disableRipple: !0,
-            onClick: s,
+            onClick: i,
             children: [
               /* @__PURE__ */ a(v, { className: "py-button-icon" }),
               /* @__PURE__ */ a("u", { style: { width: "5px" }, children: "S" }),
@@ -53,12 +53,12 @@ function E(e) {
       w,
       {
         mode: "edit",
-        id: f,
+        id: h,
         ...e.options,
-        onQueryData: y,
-        onValidChange: d,
-        ref: i,
-        storeFactory: m,
+        onQueryData: b,
+        onValidChange: m,
+        ref: r,
+        storeFactory: f,
         children: e.children
       }
     )

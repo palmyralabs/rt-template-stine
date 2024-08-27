@@ -27,6 +27,7 @@ interface IFormEditInput extends IPageInput {
     children?: any;
     onDataRefresh?: (data: any) => void;
     storeFactory?: StoreFactory<any>;
+    successMsg?: string;
 }
 interface IFormNewInput extends IPageInput, IFormInput {
     options: IOptions;
@@ -34,6 +35,7 @@ interface IFormNewInput extends IPageInput, IFormInput {
     id?: string;
     storeFactory: any;
     initialData?: {};
+    successMsg?: string;
 }
 interface IFormViewInput extends IPageInput, IFormInput {
     options: IOptions;

@@ -1,43 +1,45 @@
-import { jsx as n } from "react/jsx-runtime";
-import { useRef as u } from "react";
-import { PalmyraGrid as d } from "@palmyralabs/rt-forms-mui";
-import { SummaryGridControls as s } from "./SummaryGridControls.js";
-import { useNavigate as g } from "react-router-dom";
+import { jsx as o } from "react/jsx-runtime";
+import { useRef as s } from "react";
+import { PalmyraGrid as u } from "@palmyralabs/rt-forms-mui";
+import { SummaryGridControls as g } from "./SummaryGridControls.js";
+import { useNavigate as f } from "react-router-dom";
 import "../../../chunks/Layout.js";
 import "dayjs";
-const f = function(t, e) {
-  return e ? typeof t == "string" && e instanceof Array ? t.replace(/({\d})/g, function(i) {
-    let r = i.replace(/{/, "").replace(/}/, "");
-    return e[r];
-  }) : typeof t == "string" && e instanceof Object ? Object.keys(e).length === 0 ? t : t.replace(/({([^}]+)})/g, function(i) {
-    let r = i.replace(/{/, "").replace(/}/, "");
-    return e[r] ? e[r] : i;
+const y = function(t, i) {
+  return i ? typeof t == "string" && i instanceof Array ? t.replace(/({\d})/g, function(e) {
+    let n = e.replace(/{/, "").replace(/}/, "");
+    return i[n];
+  }) : typeof t == "string" && i instanceof Object ? Object.keys(i).length === 0 ? t : t.replace(/({([^}]+)})/g, function(e) {
+    let n = e.replace(/{/, "").replace(/}/, "");
+    return i[n] ? i[n] : e;
   }) : t : t;
 };
-function C(t) {
-  const e = g(), i = t.idKey || "id", r = t.gridRef || u(null), o = (a) => {
-    const l = { id: a[i] }, m = t.grid || "view";
-    e(f(m + "/{id}", l));
+function k(t) {
+  const i = f(), e = t.idKey || "id", n = t.gridRef || s(null), r = (l) => {
+    const d = { id: l[e] }, m = t.grid || "view";
+    i(y(m + "/{id}", d));
   }, c = () => {
-    e("new");
-  };
-  return /* @__PURE__ */ n("div", { className: "py-grid-container", children: /* @__PURE__ */ n(
-    d,
+    i("new");
+  }, a = t.DataGridControls || g;
+  return /* @__PURE__ */ o("div", { className: "py-grid-container", children: /* @__PURE__ */ o(
+    u,
     {
       title: t.title,
       columns: t.columns,
       getPluginOptions: t.getPluginOptions,
-      DataGridControls: s,
+      DataGridControls: a,
       DataGridControlProps: { newRecord: c },
-      onRowClick: o,
+      endPoint: t.options.endPoint,
+      endPointOptions: t.options.endPointOptions,
+      onRowClick: r,
       pageSize: t.pageSize,
       ...t.options,
-      ref: r,
+      ref: n,
       customizer: t.customizer,
       quickSearch: t.quickSearch
     }
   ) });
 }
 export {
-  C as SummaryGrid
+  k as SummaryGrid
 };

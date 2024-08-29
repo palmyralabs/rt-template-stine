@@ -18,7 +18,6 @@ interface IPopupGridInput extends ISummaryGridInput {
     popup?: 'dialog' | 'drawer'
 }
 
-
 function SummaryPopupGrid(props: IPopupGridInput) {
     const viewTopic = props.pageName + "/viewPage";
     const newTopic = props.pageName + "/newPage";
@@ -66,6 +65,7 @@ function SummaryPopupGrid(props: IPopupGridInput) {
     return (<div className="py-grid-container">
         <PalmyraGrid title={title} columns={props.columns} DataGridControlProps={{ setFormData: setData }}
             DataGridControls={DataGridControls} onRowClick={handleRowClick}
+            endPoint={props.options.endPoint} endPointOptions={props.options.endPointOptions} 
             pageSize={props.pageSize} {...props.options} getPluginOptions={props.getPluginOptions}
             ref={gridRef} customizer={props.customizer} quickSearch={props.quickSearch} />
         <PopupForm {...props} gridRef={gridRef} ref={dialogFormRef} />

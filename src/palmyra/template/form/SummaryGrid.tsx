@@ -33,6 +33,7 @@ function SummaryGrid(props: IGridInput) {
             <PalmyraGrid title={props.title} columns={props.columns}
                 getPluginOptions={props.getPluginOptions}
                 DataGridControls={DataGridControls} DataGridControlProps={{ newRecord }}
+                endPoint={props.options.endPoint} endPointOptions={props.options.endPointOptions}
                 onRowClick={handleRowClick} pageSize={props.pageSize} {...props.options}
                 ref={gridRef} customizer={props.customizer} quickSearch={props.quickSearch} />
         </div>

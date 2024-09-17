@@ -15,7 +15,7 @@ interface IDialogGridFormInput {
     gridRef: any,
     title?: any,
     idKey?: string,
-    storeFactory: StoreFactory<any>
+    storeFactory: StoreFactory<any, any>
     dialogHeight?: string,
     dialogWidth?: string,
     dialogMinWidth?: string

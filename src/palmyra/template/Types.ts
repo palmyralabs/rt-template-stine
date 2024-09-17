@@ -1,5 +1,5 @@
 import { IEndPoint, IEndPointOptions, StoreFactory } from "@palmyralabs/palmyra-wire"
-import { ColumnDefinition, DataGridPluginOptions, GridCustomizer, IExportOptions } from "@palmyralabs/rt-forms-mui"
+import { ColumnDefinition, DataGridPluginOptions, GridCustomizer, IExportOptions } from "@palmyralabs/rt-forms"
 
 
 interface IPageInput {
@@ -32,7 +32,7 @@ interface IFormEditInput extends IPageInput {
     id: string,
     children?: any,
     onDataRefresh?: (data: any) => void,
-    storeFactory?: StoreFactory<any>,
+    storeFactory?: StoreFactory<any, any>,
     successMsg?: string
 }
 
@@ -66,7 +66,7 @@ interface IGridInput {
 
 interface ISummaryGridInput extends IPageInput, IGridInput {
     densityOptions?: any,
-    storeFactory: StoreFactory<any>
+    storeFactory: StoreFactory<any, any>
     idKey?: string
 }
 

@@ -1,11 +1,11 @@
 import { jsx as o } from "react/jsx-runtime";
-import { useRef as s } from "react";
-import { PalmyraGrid as u } from "@palmyralabs/rt-forms-mui";
+import { useRef as u } from "react";
+import { PalmyraGrid as f } from "@palmyralabs/rt-forms-mui";
 import { SummaryGridControls as g } from "./SummaryGridControls.js";
-import { useNavigate as f } from "react-router-dom";
+import { useNavigate as y } from "react-router-dom";
 import "../../../chunks/Layout.js";
 import "dayjs";
-const y = function(t, i) {
+const P = function(t, i) {
   return i ? typeof t == "string" && i instanceof Array ? t.replace(/({\d})/g, function(e) {
     let n = e.replace(/{/, "").replace(/}/, "");
     return i[n];
@@ -14,24 +14,26 @@ const y = function(t, i) {
     return i[n] ? i[n] : e;
   }) : t : t;
 };
-function k(t) {
-  const i = f(), e = t.idKey || "id", n = t.gridRef || s(null), r = (l) => {
-    const d = { id: l[e] }, m = t.grid || "view";
-    i(y(m + "/{id}", d));
-  }, c = () => {
+function h(t) {
+  const i = y(), e = t.idKey || "id", n = t.gridRef || u(null), r = (d) => {
+    const m = { id: d[e] }, s = t.grid || "view";
+    i(P(s + "/{id}", m));
+  }, a = () => {
     i("new");
-  }, a = t.DataGridControls || g;
+  }, c = t.DataGridControls || g, l = t.disableRowClick ? () => {
+  } : r;
   return /* @__PURE__ */ o("div", { className: "py-grid-container", children: /* @__PURE__ */ o(
-    u,
+    f,
     {
       title: t.title,
       columns: t.columns,
       getPluginOptions: t.getPluginOptions,
-      DataGridControls: a,
-      DataGridControlProps: { newRecord: c },
+      defaultParams: t.defaultParams,
+      DataGridControls: c,
+      DataGridControlProps: { newRecord: a },
       endPoint: t.options.endPoint,
       endPointOptions: t.options.endPointOptions,
-      onRowClick: r,
+      onRowClick: l,
       pageSize: t.pageSize,
       ...t.options,
       ref: n,
@@ -41,5 +43,5 @@ function k(t) {
   ) });
 }
 export {
-  k as SummaryGrid
+  h as SummaryGrid
 };

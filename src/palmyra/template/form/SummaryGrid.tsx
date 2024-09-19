@@ -27,14 +27,15 @@ function SummaryGrid(props: IGridInput) {
     }
 
     const DataGridControls = props.DataGridControls || SummaryGridControls
+    const rowClick = !props.disableRowClick ? handleRowClick : () => { }
 
     return (
         <div className="py-grid-container">
             <PalmyraGrid title={props.title} columns={props.columns}
-                getPluginOptions={props.getPluginOptions}
+                getPluginOptions={props.getPluginOptions} defaultParams={props.defaultParams}
                 DataGridControls={DataGridControls} DataGridControlProps={{ newRecord }}
                 endPoint={props.options.endPoint} endPointOptions={props.options.endPointOptions}
-                onRowClick={handleRowClick} pageSize={props.pageSize} {...props.options}
+                onRowClick={rowClick} pageSize={props.pageSize} {...props.options}
                 ref={gridRef} customizer={props.customizer} quickSearch={props.quickSearch} />
         </div>
     );

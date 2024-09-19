@@ -1,5 +1,6 @@
 import { IEndPoint, IEndPointOptions } from '@palmyralabs/palmyra-wire';
 import { ColumnDefinition, DataGridPluginOptions, GridCustomizer, IExportOptions } from '@palmyralabs/rt-forms';
+import { FC } from 'react';
 interface IPageInput {
     title?: string;
     pageName: string;
@@ -47,12 +48,16 @@ interface IGridInput {
     columns: ColumnDefinition[];
     pageSize?: number[];
     exportOptions?: IExportOptions;
+    defaultParams?: any;
+    Child?: FC;
+    childProps?: Record<any, any>;
     getPluginOptions?: () => any;
     DataGridControls?: (props: DataGridPluginOptions) => JSX.Element;
 }
 interface ISummaryGridInput extends IPageInput, IGridInput {
     densityOptions?: any;
     idKey?: string;
+    disableRowClick?: boolean;
 }
 interface SummaryGridPluginOptions extends DataGridPluginOptions {
     newRecord: () => void;

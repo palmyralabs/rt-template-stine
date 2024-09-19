@@ -61,11 +61,12 @@ function SummaryPopupGrid(props: IPopupGridInput) {
     const DataGridControls = props.DataGridControls || PopupGridControls
 
     const PopupForm = (popup == 'drawer') ? SummaryDrawerForm : SummaryDialogForm
+    const rowClick = !props.disableRowClick ? handleRowClick : () => { }
 
     return (<div className="py-grid-container">
         <PalmyraGrid title={title} columns={props.columns} DataGridControlProps={{ setFormData: setData }}
-            DataGridControls={DataGridControls} onRowClick={handleRowClick}
-            endPoint={props.options.endPoint} endPointOptions={props.options.endPointOptions} 
+            DataGridControls={DataGridControls} onRowClick={rowClick} defaultParams={props.defaultParams}
+            endPoint={props.options.endPoint} endPointOptions={props.options.endPointOptions}
             pageSize={props.pageSize} {...props.options} getPluginOptions={props.getPluginOptions}
             ref={gridRef} customizer={props.customizer} quickSearch={props.quickSearch} />
         <PopupForm {...props} gridRef={gridRef} ref={dialogFormRef} />

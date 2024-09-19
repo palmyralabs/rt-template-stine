@@ -1,11 +1,11 @@
-import { jsxs as N, jsx as l } from "react/jsx-runtime";
-import { useRef as f, useEffect as S } from "react";
+import { jsxs as N, jsx as b } from "react/jsx-runtime";
+import { useRef as d, useEffect as S } from "react";
 import { A as n } from "../../../chunks/Layout.js";
 import "dayjs";
 import { PalmyraGrid as v } from "@palmyralabs/rt-forms-mui";
-import { SummaryDialogForm as C } from "./SummaryDialogForm.js";
-import { SummaryDrawerForm as G } from "./SummaryDrawerForm.js";
-import { PopupGridControls as R } from "./PopupGridControls.js";
+import { SummaryDialogForm as R } from "./SummaryDialogForm.js";
+import { SummaryDrawerForm as k } from "./SummaryDrawerForm.js";
+import { PopupGridControls as G } from "./PopupGridControls.js";
 class y {
   subscribe(r, t) {
     const s = n.subscribe(r, t);
@@ -27,47 +27,49 @@ class y {
   }
 }
 const i = new y();
-function j(e) {
-  const r = e.pageName + "/viewPage", t = e.pageName + "/newPage", s = e.pageName + "/refresh", d = e.title, g = e.popup || "drawer", u = f(), c = e.gridRef || f(null);
+function q(e) {
+  const r = e.pageName + "/viewPage", t = e.pageName + "/newPage", s = e.pageName + "/refresh", f = e.title, g = e.popup || "drawer", u = d(), a = e.gridRef || d(null);
   S(() => {
-    var o = i.subscribe(r, (b, m) => {
-      a(m);
-    }), h = i.subscribe(s, (b) => {
-      c.current && c.current.refresh();
-    }), D = i.subscribe(t, (b, m) => {
-      a(m);
+    var o = i.subscribe(r, (l, m) => {
+      c(m);
+    }), C = i.subscribe(s, (l) => {
+      a.current && a.current.refresh();
+    }), D = i.subscribe(t, (l, m) => {
+      c(m);
     });
     return () => {
-      i.unsubscribe(o), i.unsubscribe(D), i.unsubscribe(h);
+      i.unsubscribe(o), i.unsubscribe(D), i.unsubscribe(C);
     };
   }, []);
-  const p = (o) => {
-    a(o);
-  }, a = (o) => {
+  const P = (o) => {
+    c(o);
+  }, c = (o) => {
     u.current && u.current.setData(o);
-  }, P = e.DataGridControls || R, w = g == "drawer" ? G : C;
+  }, w = e.DataGridControls || G, p = g == "drawer" ? k : R, h = e.disableRowClick ? () => {
+  } : P;
   return /* @__PURE__ */ N("div", { className: "py-grid-container", children: [
-    /* @__PURE__ */ l(
+    /* @__PURE__ */ b(
       v,
       {
-        title: d,
+        title: f,
         columns: e.columns,
-        DataGridControlProps: { setFormData: a },
-        DataGridControls: P,
-        onRowClick: p,
+        DataGridControlProps: { setFormData: c },
+        DataGridControls: w,
+        onRowClick: h,
+        defaultParams: e.defaultParams,
         endPoint: e.options.endPoint,
         endPointOptions: e.options.endPointOptions,
         pageSize: e.pageSize,
         ...e.options,
         getPluginOptions: e.getPluginOptions,
-        ref: c,
+        ref: a,
         customizer: e.customizer,
         quickSearch: e.quickSearch
       }
     ),
-    /* @__PURE__ */ l(w, { ...e, gridRef: c, ref: u })
+    /* @__PURE__ */ b(p, { ...e, gridRef: a, ref: u })
   ] });
 }
 export {
-  j as SummaryPopupGrid
+  q as SummaryPopupGrid
 };

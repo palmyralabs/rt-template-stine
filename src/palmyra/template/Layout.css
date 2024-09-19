@@ -88,6 +88,13 @@ body {
     font-size: 14px !important;
     cursor: pointer;
     text-transform: none !important;
+    transition: all 0.3s ease;
+}
+
+.py-filled-button:active,
+.py-secondary-filled-button:active,
+.py-cancel-filled-button:active {
+    transform: scale(0.98);
 }
 
 .py-outlined-button,

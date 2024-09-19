@@ -1,12 +1,10 @@
-import { PalmyraTreeStore } from "@palmyralabs/palmyra-wire";
+import { IEndPoint, PalmyraTreeStore, StoreOptions } from "@palmyralabs/palmyra-wire";
 import { AsyncTreeMenu } from "@palmyralabs/rt-forms-mui";
 
 
 const DynamicMenu = ({ sidebarWidth }) => {
 
-
-
-    const treeStore = new PalmyraTreeStore({ target: '/' }, "flatMenu.json");
+    const treeStore = new PalmyraTreeStore("", "flatMenu.json", {});
 
     return (
         <div style={{ width: "100%" }}>

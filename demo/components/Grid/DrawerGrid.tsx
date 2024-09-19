@@ -1,10 +1,10 @@
-import { ColumnDefinition, FieldGroupContainer, IDataGridDefaultControlConfig, MuiTextField } from "@palmyralabs/rt-forms-mui";
-import storeFactory from "../Wire/StoreFactory";
+import { ColumnDefinition, IDataGridDefaultControlConfig, MuiTextField } from "@palmyralabs/rt-forms-mui";
 import { IEndPoint } from "@palmyralabs/palmyra-wire";
 import { SummaryPopupGrid } from "../../../src/main";
 import { Button } from "@mui/material";
 import { PopupGridControls } from "../../../src/palmyra/template/popup/PopupGridControls";
 import { PopupGridPluginOptions } from "../../../src/palmyra/template/Types";
+import { FieldGroupContainer } from "@palmyralabs/rt-forms";
 
 
 function DrawerGrid(props: any) {
@@ -59,7 +59,7 @@ function DrawerGrid(props: any) {
     return (<div className="py-grid-container">
         <SummaryPopupGrid NewFormlet={Formlet} EditFormlet={Formlet}
             getPluginOptions={getPluginOptions} DataGridControls={CustomControl}
-            storeFactory={storeFactory} columns={fields} quickSearch="name"
+            columns={fields} quickSearch="name"
             pageName={props.pageName} title={"Summary Popup Grid"}
             options={{ endPoint }} /></div>
     );

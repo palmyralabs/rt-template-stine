@@ -12,7 +12,6 @@ function NewForm(props: IFormNewInput) {
     const navigate = useNavigate();
     const [isValid, setValid] = useState<boolean>(false);
     const formRef = useRef<ISaveForm>();
-    const storeFactory = props.storeFactory;
     const initialData = props.initialData || {};
     const pageName = props.pageName;
     const errorText = props.errorText;
@@ -75,7 +74,7 @@ function NewForm(props: IFormNewInput) {
                     </div>
                 </div>
                 <PalmyraNewForm onValidChange={setValid} {...props.options}
-                    ref={formRef} storeFactory={storeFactory} initialData={initialData}>
+                    ref={formRef} initialData={initialData}>
                     {props.children}
                 </PalmyraNewForm>
             </form>

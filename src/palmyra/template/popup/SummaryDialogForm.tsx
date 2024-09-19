@@ -5,7 +5,6 @@ import { Button, Dialog } from '@mui/material';
 import { useSaveForm } from "../hooks/useSaveForm";
 import { EditForm } from "./EditForm";
 import { NewForm } from "./NewForm";
-import { StoreFactory } from "@palmyralabs/palmyra-wire";
 import { IOptions } from "../Types";
 
 interface IDialogGridFormInput {
@@ -15,7 +14,6 @@ interface IDialogGridFormInput {
     gridRef: any,
     title?: any,
     idKey?: string,
-    storeFactory: StoreFactory<any, any>
     dialogHeight?: string,
     dialogWidth?: string,
     dialogMinWidth?: string
@@ -26,7 +24,6 @@ interface IDialogForm {
 }
 
 const SummaryDialogForm = forwardRef((props: IDialogGridFormInput, ref: MutableRefObject<IDialogForm>) => {
-    const storeFactory = props.storeFactory;
     const title: any = props.title;
     const idKey = props.idKey || 'id';
     const height = props.dialogHeight || 'auto';
@@ -84,10 +81,10 @@ const SummaryDialogForm = forwardRef((props: IDialogGridFormInput, ref: MutableR
                     </div>
                 </div>
                 {data?.[idKey] ?
-                    <EditForm setValid={setValid} storeFactory={storeFactory} formRef={formRef}
+                    <EditForm setValid={setValid} formRef={formRef}
                         handleKeyPress={handleKeyPress} options={props.options}
                         {...props.options} id={data?.[idKey]} FORMLET={EditFormlet} />
-                    : <NewForm setValid={setValid} storeFactory={storeFactory} formRef={formRef}
+                    : <NewForm setValid={setValid} formRef={formRef}
                         handleKeyPress={handleKeyPress} options={props.options}
                         {...props.options} initialData={data} FORMLET={NewFormlet} />}
                 <div className="py-drawer-form-btn-container">

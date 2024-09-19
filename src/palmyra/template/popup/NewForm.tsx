@@ -7,14 +7,13 @@ interface IFormInput {
     options: IOptions,
     initialData?: any,
     FORMLET: FC
-    storeFactory: any
     handleKeyPress: (event: any) => void,
     setValid: (s: any) => void,
     formRef: MutableRefObject<ISaveForm>
 }
 
 function NewForm(props: IFormInput) {
-    const storeFactory = props.storeFactory || useContext(StoreFactoryContext);
+    const storeFactory = useContext(StoreFactoryContext);
     const { handleKeyPress, setValid, formRef } = props;
     const initialData = props.initialData || {};
     const Children = props.FORMLET;

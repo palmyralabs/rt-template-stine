@@ -6,7 +6,6 @@ import { PalmyraViewForm } from '@palmyralabs/rt-forms';
 
 
 function ViewForm(props: IFormViewInput) {
-    const storeFactory = props.storeFactory;
     const id = props.id;
     const pageName = props.pageName;
     const navigate = useNavigate();
@@ -38,7 +37,7 @@ function ViewForm(props: IFormViewInput) {
                     </Button>
                 </div>
             </div>
-            <PalmyraViewForm id={id} {...props.options} storeFactory={storeFactory}>
+            <PalmyraViewForm id={id} {...props.options}>
                 {props.children}
             </PalmyraViewForm>
         </div>

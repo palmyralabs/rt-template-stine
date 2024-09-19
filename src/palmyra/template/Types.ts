@@ -1,4 +1,4 @@
-import { IEndPoint, IEndPointOptions, StoreFactory } from "@palmyralabs/palmyra-wire"
+import { IEndPoint, IEndPointOptions } from "@palmyralabs/palmyra-wire"
 import { ColumnDefinition, DataGridPluginOptions, GridCustomizer, IExportOptions } from "@palmyralabs/rt-forms"
 
 
@@ -21,10 +21,10 @@ interface queryOptions {
 }
 
 interface IFormInput {
-    onComplete: (data: any) => void,
-    onSave: (data: any) => void,
-    onFailure: (error: any) => void,
-    onCancel: () => void
+    onComplete?: (data: any) => void,
+    onSave?: (data: any) => void,
+    onFailure?: (error: any) => void,
+    onCancel?: () => void
 }
 
 interface IFormEditInput extends IPageInput {
@@ -32,7 +32,6 @@ interface IFormEditInput extends IPageInput {
     id: string,
     children?: any,
     onDataRefresh?: (data: any) => void,
-    storeFactory?: StoreFactory<any, any>,
     successMsg?: string
 }
 
@@ -41,7 +40,6 @@ interface IFormNewInput extends IPageInput, IFormInput {
     options: IOptions,
     children?: any,
     id?: string,
-    storeFactory: any,
     initialData?: {},
     successMsg?: string
 }
@@ -49,8 +47,7 @@ interface IFormNewInput extends IPageInput, IFormInput {
 interface IFormViewInput extends IPageInput, IFormInput {
     options: IOptions,
     id: string,
-    children: any,
-    storeFactory: any
+    children: any
 }
 
 interface IGridInput {
@@ -66,7 +63,6 @@ interface IGridInput {
 
 interface ISummaryGridInput extends IPageInput, IGridInput {
     densityOptions?: any,
-    storeFactory: StoreFactory<any, any>
     idKey?: string
 }
 

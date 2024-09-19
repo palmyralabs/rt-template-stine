@@ -1,5 +1,4 @@
 import { ColumnDefinition } from "@palmyralabs/rt-forms-mui";
-import storeFactory from "../Wire/StoreFactory";
 import { SummaryGrid } from "../../../src/main";
 import { IEndPoint } from "@palmyralabs/palmyra-wire";
 
@@ -13,6 +12,14 @@ function Grid(props: any) {
             searchable: true,
             sortable: true,
             type: "string"
+        },
+        {
+            attribute: "dob",
+            name: "dob",
+            label: "Dob",
+            searchable: true,
+            sortable: true,
+            type: "date"
         },
         // {
         //     attribute: "population",
@@ -32,7 +39,6 @@ function Grid(props: any) {
 
     return (
         <SummaryGrid
-            storeFactory={storeFactory}
             columns={fields}
             pageName={props.pageName}
             title={"Summary Grid"}

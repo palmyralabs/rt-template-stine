@@ -12,7 +12,6 @@ function EditForm(props: IFormEditInput) {
     const navigate = useNavigate();
     const [isValid, setValid] = useState<boolean>(false);
     const formRef = useRef<ISaveForm>();
-    const storeFactory = props.storeFactory;
     const id = props.id;
     const pageName = props.pageName;
 
@@ -71,7 +70,7 @@ function EditForm(props: IFormEditInput) {
                     </div>
                 </div>
                 <PalmyraEditForm mode="edit" id={id} {...props.options} onQueryData={onQueryData}
-                    onValidChange={setValid} ref={formRef} storeFactory={storeFactory}>
+                    onValidChange={setValid} ref={formRef}>
                     {props.children}
                 </PalmyraEditForm>
             </form>

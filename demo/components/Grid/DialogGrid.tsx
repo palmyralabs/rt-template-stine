@@ -1,7 +1,7 @@
-import { ColumnDefinition, FieldGroupContainer, MuiNumberField, MuiTextField } from "@palmyralabs/rt-forms-mui";
-import storeFactory from "../Wire/StoreFactory";
+import { ColumnDefinition, MuiNumberField, MuiTextField } from "@palmyralabs/rt-forms-mui";
 import { IEndPoint } from "@palmyralabs/palmyra-wire";
 import { SummaryPopupGrid } from "../../../src/main";
+import { FieldGroupContainer } from "@palmyralabs/rt-forms";
 
 
 function DialogGrid(props: any) {
@@ -44,7 +44,6 @@ function DialogGrid(props: any) {
     return (<div className="py-grid-container">
         <SummaryPopupGrid popup="dialog"
             NewFormlet={Formlet} EditFormlet={Formlet}
-            storeFactory={storeFactory}
             columns={fields}
             pageName={props.pageName}
             title={"Summary Dialog Grid"}

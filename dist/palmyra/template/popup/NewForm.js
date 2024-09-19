@@ -1,20 +1,20 @@
-import { jsx as o } from "react/jsx-runtime";
+import { jsx as t } from "react/jsx-runtime";
 import { useContext as c } from "react";
 import { StoreFactoryContext as l, PalmyraNewForm as f } from "@palmyralabs/rt-forms";
-function F(t) {
-  const e = t.storeFactory || c(l), { handleKeyPress: r, setValid: n, formRef: i } = t, a = t.initialData || {}, m = t.FORMLET;
-  return /* @__PURE__ */ o("form", { onKeyDown: r, children: /* @__PURE__ */ o(
+function y(o) {
+  const e = c(l), { handleKeyPress: n, setValid: r, formRef: i } = o, a = o.initialData || {}, m = o.FORMLET;
+  return /* @__PURE__ */ t("form", { onKeyDown: n, children: /* @__PURE__ */ t(
     f,
     {
-      onValidChange: n,
+      onValidChange: r,
       ref: i,
       storeFactory: e,
-      ...t.options,
+      ...o.options,
       initialData: a,
-      children: /* @__PURE__ */ o(m, {})
+      children: /* @__PURE__ */ t(m, {})
     }
   ) });
 }
 export {
-  F as NewForm
+  y as NewForm
 };

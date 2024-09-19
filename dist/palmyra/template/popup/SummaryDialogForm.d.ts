@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { StoreFactory } from '@palmyralabs/palmyra-wire';
 import { IOptions } from '../Types';
 interface IDialogGridFormInput {
     options: IOptions;
@@ -8,7 +7,6 @@ interface IDialogGridFormInput {
     gridRef: any;
     title?: any;
     idKey?: string;
-    storeFactory: StoreFactory<any, any>;
     dialogHeight?: string;
     dialogWidth?: string;
     dialogMinWidth?: string;

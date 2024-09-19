@@ -5,7 +5,6 @@ interface IFormInput {
     options: IOptions;
     initialData?: any;
     FORMLET: FC;
-    storeFactory: any;
     handleKeyPress: (event: any) => void;
     setValid: (s: any) => void;
     formRef: MutableRefObject<ISaveForm>;

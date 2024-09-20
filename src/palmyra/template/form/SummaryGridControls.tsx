@@ -1,6 +1,7 @@
 import { ExportDataButton, FilterButton, IDataGridDefaultControlConfig, QuickSearch } from "@palmyralabs/rt-forms-mui";
 import { SummaryGridPluginOptions } from "../Types";
 import { Button } from "@mui/material";
+import { Add } from "@mui/icons-material";
 
 const SummaryGridControls = (props: SummaryGridPluginOptions) => {
     const { getPluginOptions, ...o } = props;
@@ -13,7 +14,9 @@ const SummaryGridControls = (props: SummaryGridPluginOptions) => {
         <ExportDataButton exportOption={{ csv: 'CSV' }}
             visible={pluginOptions.export?.visible} disabled={pluginOptions.export?.disabled}
             queryRef={o.queryRef} {...pluginOptions.export} />
-        <Button onClick={() => props.newRecord()} {...pluginOptions.add} className="py-action-button">Add</Button>
+        <Button onClick={() => props.newRecord()} {...pluginOptions.add} className="py-action-button">
+            <Add />
+            Add</Button>
     </>);
 }
 

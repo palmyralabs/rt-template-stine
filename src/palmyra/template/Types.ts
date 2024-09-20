@@ -2,7 +2,6 @@ import { IEndPoint, IEndPointOptions } from "@palmyralabs/palmyra-wire"
 import { ColumnDefinition, DataGridPluginOptions, GridCustomizer, IExportOptions } from "@palmyralabs/rt-forms"
 import { FC } from "react"
 
-
 interface IPageInput {
     title?: string,
     pageName: string,
@@ -35,7 +34,6 @@ interface IFormEditInput extends IPageInput {
     onDataRefresh?: (data: any) => void,
     successMsg?: string
 }
-
 
 interface IFormNewInput extends IPageInput, IFormInput {
     options: IOptions,

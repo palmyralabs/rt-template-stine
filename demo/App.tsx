@@ -8,6 +8,9 @@ import DrawerGridPage from './Pages/DrawerGridPage';
 import DialogGridPage from './Pages/DialogGridPage';
 import EditFormPage from './Pages/EditFormPage';
 import EditGridPage from './Pages/GridEditPage';
+import customParseFormat from 'dayjs/plugin/customParseFormat'
+import dayjs from 'dayjs';
+dayjs.extend(customParseFormat);
 
 function App() {
   return (

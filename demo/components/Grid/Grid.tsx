@@ -1,4 +1,4 @@
-import { ColumnDefinition } from "@palmyralabs/rt-forms-mui";
+import { ColumnDefinition } from "@palmyralabs/rt-forms";
 import { SummaryGrid } from "../../../src/main";
 import { IEndPoint } from "@palmyralabs/palmyra-wire";
 
@@ -19,6 +19,7 @@ function Grid(props: any) {
             label: "Dob",
             searchable: true,
             sortable: true,
+            displayPattern:"MM-DD-YYYY",
             type: "date"
         },
         // {

@@ -57,7 +57,7 @@
     "usehooks-ts": "^3.1.0"
   },
   "peerDependencies": {
-    "@palmyralabs/palmyra-wire": "^1.0.3",
+    "@palmyralabs/palmyra-wire": "^1.1.0",
     "@palmyralabs/ts-predicates": "github:palmyralabs/ts-predicates",
     "@palmyralabs/ts-utils": "github:palmyralabs/ts-utils"
   },

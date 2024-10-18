@@ -6,6 +6,7 @@ import { useSaveForm } from "../hooks/useSaveForm";
 import { EditForm } from "./EditForm";
 import { NewForm } from "./NewForm";
 import { IOptions } from "../Types";
+import { ErrorHandler } from "@palmyralabs/palmyra-wire";
 
 interface IDialogGridFormInput {
     options: IOptions,
@@ -52,6 +53,11 @@ const SummaryDrawerForm = forwardRef((props: IDialogGridFormInput, ref: MutableR
         gridRef.current.refresh();
     }
 
+    const onQueryFailure: ErrorHandler = (_e) => {
+        onCancel();
+        return false;
+    }
+
     const handleError = (e) => {
         console.log(e);
     }
@@ -73,7 +79,7 @@ const SummaryDrawerForm = forwardRef((props: IDialogGridFormInput, ref: MutableR
                 </div>
             </div>
             {data?.[idKey] ?
-                <EditForm setValid={setValid} formRef={formRef}
+                <EditForm setValid={setValid} formRef={formRef} onQueryFailure={onQueryFailure}
                     handleKeyPress={handleKeyPress} options={props.options}
                     {...props.options} id={data?.[idKey]} FORMLET={EditFormlet} />
                 : <NewForm setValid={setValid} formRef={formRef}

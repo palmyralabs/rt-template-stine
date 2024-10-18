@@ -1,40 +1,40 @@
-import { jsx as o, Fragment as k, jsxs as n } from "react/jsx-runtime";
-import { forwardRef as M, useState as O, useRef as g, useImperativeHandle as P } from "react";
-import { Close as y, Done as j } from "@mui/icons-material";
-import { Dialog as H, Button as p } from "@mui/material";
-import { useSaveForm as I } from "../hooks/useSaveForm.js";
-import { EditForm as L } from "./EditForm.js";
-import { NewForm as T } from "./NewForm.js";
-const Q = M((e, v) => {
-  const F = e.title, a = e.idKey || "id", x = e.dialogHeight || "auto", d = e.dialogWidth || "auto", C = e.dialogMinWidth || "600px", [t, i] = O(void 0), N = g(0), c = e.gridRef, b = v || g();
-  P(b, () => ({ setData: i }), [c]);
-  const R = () => {
+import { jsx as o, Fragment as M, jsxs as n } from "react/jsx-runtime";
+import { forwardRef as O, useState as P, useRef as p, useImperativeHandle as j } from "react";
+import { Close as v, Done as H } from "@mui/icons-material";
+import { Dialog as I, Button as F } from "@mui/material";
+import { useSaveForm as L } from "../hooks/useSaveForm.js";
+import { EditForm as T } from "./EditForm.js";
+import { NewForm as V } from "./NewForm.js";
+const J = O((e, x) => {
+  const C = e.title, a = e.idKey || "id", N = e.dialogHeight || "auto", d = e.dialogWidth || "auto", b = e.dialogMinWidth || "600px", [t, i] = P(void 0), R = p(0), c = e.gridRef, w = x || p();
+  j(w, () => ({ setData: i }), [c]);
+  const s = () => {
     i(void 0);
-  }, w = () => {
-    i(void 0), s();
-  }, s = () => {
-    N.current += 1, c.current.refresh();
-  }, D = (W) => {
-    console.log(W);
-  }, {
+  }, D = () => {
+    i(void 0), m();
+  }, m = () => {
+    R.current += 1, c.current.refresh();
+  }, E = (g) => {
+    console.log(g);
+  }, S = (g) => (s(), !1), {
     doCancel: r,
-    doSaveClose: E,
+    doSaveClose: K,
     handleKeyPress: l,
-    setValid: m,
-    isValid: h,
-    formRef: u
-  } = I({ onCancel: R, onComplete: w, onFailure: D, onSave: s }), f = t != null, S = e.EditFormlet, K = e.NewFormlet;
-  return /* @__PURE__ */ o(k, { children: f && /* @__PURE__ */ n(
-    H,
+    setValid: h,
+    isValid: u,
+    formRef: f
+  } = L({ onCancel: s, onComplete: D, onFailure: E, onSave: m }), y = t != null, W = e.EditFormlet, k = e.NewFormlet;
+  return /* @__PURE__ */ o(M, { children: y && /* @__PURE__ */ n(
+    I,
     {
-      open: f,
+      open: y,
       onClose: r,
       onKeyDown: l,
       PaperProps: {
         sx: {
           width: d,
-          minWidth: C,
-          height: x,
+          minWidth: b,
+          height: N,
           borderRadius: "15px",
           padding: "20px 15px",
           maxWidth: d
@@ -42,53 +42,54 @@ const Q = M((e, v) => {
       },
       children: [
         /* @__PURE__ */ n("div", { className: "py-form-header-container", children: [
-          /* @__PURE__ */ o("div", { children: F }),
-          /* @__PURE__ */ o("div", { className: "py-dialog-header-right-container", children: /* @__PURE__ */ o(y, { onClick: r, className: "py-header-close-icon" }) })
+          /* @__PURE__ */ o("div", { children: C }),
+          /* @__PURE__ */ o("div", { className: "py-dialog-header-right-container", children: /* @__PURE__ */ o(v, { onClick: r, className: "py-header-close-icon" }) })
         ] }),
         t != null && t[a] ? /* @__PURE__ */ o(
-          L,
+          T,
           {
-            setValid: m,
-            formRef: u,
+            setValid: h,
+            formRef: f,
+            onQueryFailure: S,
             handleKeyPress: l,
             options: e.options,
             ...e.options,
             id: t == null ? void 0 : t[a],
-            FORMLET: S
+            FORMLET: W
           }
         ) : /* @__PURE__ */ o(
-          T,
+          V,
           {
-            setValid: m,
-            formRef: u,
+            setValid: h,
+            formRef: f,
             handleKeyPress: l,
             options: e.options,
             ...e.options,
             initialData: t,
-            FORMLET: K
+            FORMLET: k
           }
         ),
         /* @__PURE__ */ n("div", { className: "py-drawer-form-btn-container", children: [
           /* @__PURE__ */ n(
-            p,
+            F,
             {
               className: "py-cancel-filled-button",
               onClick: r,
               tabIndex: -1,
               children: [
-                /* @__PURE__ */ o(y, { className: "py-button-icon" }),
+                /* @__PURE__ */ o(v, { className: "py-button-icon" }),
                 "Cancel"
               ]
             }
           ),
           /* @__PURE__ */ n(
-            p,
+            F,
             {
-              disabled: !h,
-              className: h ? "py-filled-button" : "py-disabled-button",
-              onClick: E,
+              disabled: !u,
+              className: u ? "py-filled-button" : "py-disabled-button",
+              onClick: K,
               children: [
-                /* @__PURE__ */ o(j, { className: "py-button-icon" }),
+                /* @__PURE__ */ o(H, { className: "py-button-icon" }),
                 /* @__PURE__ */ o("u", { style: { width: "5px" }, children: "S" }),
                 "ave"
               ]
@@ -100,5 +101,5 @@ const Q = M((e, v) => {
   ) });
 });
 export {
-  Q as SummaryDialogForm
+  J as SummaryDialogForm
 };

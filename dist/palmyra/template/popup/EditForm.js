@@ -1,17 +1,18 @@
-import { jsx as t } from "react/jsx-runtime";
-import { useContext as c } from "react";
-import { StoreFactoryContext as a, PalmyraEditForm as f } from "@palmyralabs/rt-forms";
+import { jsx as r } from "react/jsx-runtime";
+import { useContext as d } from "react";
+import { StoreFactoryContext as c, PalmyraEditForm as l } from "@palmyralabs/rt-forms";
 function y(o) {
-  const r = c(a), e = o.id, { handleKeyPress: n, setValid: i, formRef: m } = o, d = o.FORMLET;
-  return /* @__PURE__ */ t("form", { onKeyDown: n, children: /* @__PURE__ */ t(
-    f,
+  const e = d(c), t = o.id, { handleKeyPress: n, setValid: i, formRef: m } = o, a = o.FORMLET;
+  return /* @__PURE__ */ r("form", { onKeyDown: n, children: /* @__PURE__ */ r(
+    l,
     {
       onValidChange: i,
       ref: m,
-      storeFactory: r,
+      storeFactory: e,
       ...o.options,
-      id: e,
-      children: /* @__PURE__ */ t(d, {})
+      id: t,
+      onQueryFailure: o.onQueryFailure,
+      children: /* @__PURE__ */ r(a, {})
     }
   ) });
 }

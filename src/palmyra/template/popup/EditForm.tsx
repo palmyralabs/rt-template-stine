@@ -1,12 +1,14 @@
 import { FC, MutableRefObject, useContext } from "react";
 import { IOptions } from "../Types";
 import { ISaveForm, PalmyraEditForm, StoreFactoryContext } from "@palmyralabs/rt-forms";
+import { ErrorHandler } from "@palmyralabs/palmyra-wire";
 
 
 interface IFormInput {
     options: IOptions,
     id: string,
-    FORMLET: FC
+    FORMLET: FC,
+    onQueryFailure:ErrorHandler,
     handleKeyPress: (event: any) => void,
     setValid: (s: any) => void,
     formRef: MutableRefObject<ISaveForm>
@@ -20,7 +22,7 @@ function EditForm(props: IFormInput) {
     return (
         <form onKeyDown={handleKeyPress}>
             <PalmyraEditForm onValidChange={setValid} ref={formRef} storeFactory={storeFactory}
-                {...props.options} id={id}>
+                {...props.options} id={id} onQueryFailure={props.onQueryFailure}>
                 <Children />
             </PalmyraEditForm>
         </form>

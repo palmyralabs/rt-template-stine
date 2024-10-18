@@ -59,7 +59,7 @@
   "peerDependencies": {
     "@palmyralabs/palmyra-wire": "^1.1.0",
     "@palmyralabs/ts-predicates": "github:palmyralabs/ts-predicates",
-    "@palmyralabs/ts-utils": "github:palmyralabs/ts-utils"
+    "@palmyralabs/ts-utils": "^0.1.0"
   },
   "overrides": {
     "glob": "^11.0.0"

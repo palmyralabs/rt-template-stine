@@ -1,47 +1,38 @@
-import { jsx as o } from "react/jsx-runtime";
+import { jsx as n } from "react/jsx-runtime";
 import { useRef as u } from "react";
-import { PalmyraGrid as f } from "@palmyralabs/rt-forms-mui";
-import { SummaryGridControls as g } from "./SummaryGridControls.js";
-import { useNavigate as y } from "react-router-dom";
-import "../../../chunks/Layout.js";
-import "dayjs";
-const P = function(t, i) {
-  return i ? typeof t == "string" && i instanceof Array ? t.replace(/({\d})/g, function(e) {
-    let n = e.replace(/{/, "").replace(/}/, "");
-    return i[n];
-  }) : typeof t == "string" && i instanceof Object ? Object.keys(i).length === 0 ? t : t.replace(/({([^}]+)})/g, function(e) {
-    let n = e.replace(/{/, "").replace(/}/, "");
-    return i[n] ? i[n] : e;
-  }) : t : t;
-};
-function h(t) {
-  const i = y(), e = t.idKey || "id", n = t.gridRef || u(null), r = (d) => {
-    const m = { id: d[e] }, s = t.grid || "view";
-    i(P(s + "/{id}", m));
+import { PalmyraGrid as g } from "@palmyralabs/rt-forms-mui";
+import { SummaryGridControls as f } from "./SummaryGridControls.js";
+import { useNavigate as P } from "react-router-dom";
+import { StringFormat as C } from "@palmyralabs/ts-utils";
+import '../../../assets/Layout.css';/* empty css                     */
+function v(i) {
+  const t = P(), o = i.idKey || "id", e = i.gridRef || u(null), r = (m) => {
+    const l = { id: m[o] }, s = i.grid || "view";
+    t(C(s + "/{id}", l));
   }, a = () => {
-    i("new");
-  }, c = t.DataGridControls || g, l = t.disableRowClick ? () => {
+    t("new");
+  }, d = i.DataGridControls || f, c = i.disableRowClick ? () => {
   } : r;
-  return /* @__PURE__ */ o("div", { className: "py-grid-container", children: /* @__PURE__ */ o(
-    f,
+  return /* @__PURE__ */ n("div", { className: "py-grid-container", children: /* @__PURE__ */ n(
+    g,
     {
-      title: t.title,
-      columns: t.columns,
-      getPluginOptions: t.getPluginOptions,
-      defaultParams: t.defaultParams,
-      DataGridControls: c,
+      title: i.title,
+      columns: i.columns,
+      getPluginOptions: i.getPluginOptions,
+      defaultParams: i.defaultParams,
+      DataGridControls: d,
       DataGridControlProps: { newRecord: a },
-      endPoint: t.options.endPoint,
-      endPointOptions: t.options.endPointOptions,
-      onRowClick: l,
-      pageSize: t.pageSize,
-      ...t.options,
-      ref: n,
-      customizer: t.customizer,
-      quickSearch: t.quickSearch
+      endPoint: i.options.endPoint,
+      endPointOptions: i.options.endPointOptions,
+      onRowClick: c,
+      pageSize: i.pageSize,
+      ...i.options,
+      ref: e,
+      customizer: i.customizer,
+      quickSearch: i.quickSearch
     }
   ) });
 }
 export {
-  h as SummaryGrid
+  v as SummaryGrid
 };

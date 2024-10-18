@@ -37,6 +37,7 @@ export default defineConfig({
         'chartjs-plugin-datalabels',
         'd3',
         'dayjs',
+        "@palmyralabs/ts-utils",
         '@palmyralabs/palmyra-wire',
         '@palmyralabs/rt-forms',
         '@palmyralabs/rt-forms-mui',

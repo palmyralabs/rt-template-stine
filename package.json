@@ -58,10 +58,10 @@
   },
   "peerDependencies": {
     "@palmyralabs/palmyra-wire": "^1.1.0",
-    "@palmyralabs/ts-predicates": "github:palmyralabs/ts-predicates",
-    "@palmyralabs/ts-utils": "^0.1.0"
+    "@palmyralabs/ts-predicates": "github:palmyralabs/ts-predicates"
   },
   "overrides": {
-    "glob": "^11.0.0"
+    "glob": "^11.0.0",
+    "react": "^18.3.1"
   }
 }
